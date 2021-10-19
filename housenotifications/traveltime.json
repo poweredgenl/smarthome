@@ -1,0 +1,398 @@
+[
+    {
+        "id": "13aceb59.6423b5",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Travel time ",
+        "style": {
+            "stroke": "none",
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "9a708486.f9a228",
+            "7728d650.25b888",
+            "59355969.81c4c8",
+            "8da47147.e62e8",
+            "5aab491d.196b68",
+            "f21ff603.38c018",
+            "ad8cc304.04eaf",
+            "9d09e76d.8cf7f8",
+            "e8fb6288.cc3c5",
+            "8b8f1c06.81103",
+            "db3679bf.438038",
+            "20ab3f4e34e344ac",
+            "db2b036fa42b0d59"
+        ],
+        "x": 54,
+        "y": 1239,
+        "w": 872,
+        "h": 322
+    },
+    {
+        "id": "9a708486.f9a228",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "PP",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.travel_time_pp",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 130,
+        "y": 1340,
+        "wires": [
+            [
+                "8b8f1c06.81103"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7728d650.25b888",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "59355969.81c4c8",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "Compose message",
+        "func": "msg.payload =\n\n\"The travel time to the RedHat office is,\"+\n\"{{states.sensor.google_travel_time.state}} minutes\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1340,
+        "wires": [
+            [
+                "7728d650.25b888",
+                "8da47147.e62e8",
+                "5aab491d.196b68"
+            ]
+        ]
+    },
+    {
+        "id": "8da47147.e62e8",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 800,
+        "y": 1400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5aab491d.196b68",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.travel_time_pp",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 1340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f21ff603.38c018",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "Compose message",
+        "func": "msg.payload =\n\n\"The travel time to the Catholic News office is,\"+\n\"{{states.sensor.google_travel_time_2.state}} minutes\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1420,
+        "wires": [
+            [
+                "8da47147.e62e8",
+                "9d09e76d.8cf7f8",
+                "e8fb6288.cc3c5"
+            ]
+        ]
+    },
+    {
+        "id": "ad8cc304.04eaf",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "Suus",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.travel_time_suus",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 130,
+        "y": 1420,
+        "wires": [
+            [
+                "db3679bf.438038"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9d09e76d.8cf7f8",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.travel_time_pp",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 800,
+        "y": 1460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e8fb6288.cc3c5",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 810,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "8b8f1c06.81103",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 280,
+        "y": 1340,
+        "wires": [
+            [
+                "20ab3f4e34e344ac"
+            ]
+        ]
+    },
+    {
+        "id": "db3679bf.438038",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 280,
+        "y": 1420,
+        "wires": [
+            [
+                "db2b036fa42b0d59"
+            ]
+        ]
+    },
+    {
+        "id": "20ab3f4e34e344ac",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "3000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 410,
+        "y": 1340,
+        "wires": [
+            [
+                "59355969.81c4c8"
+            ]
+        ]
+    },
+    {
+        "id": "db2b036fa42b0d59",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "13aceb59.6423b5",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "3000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 410,
+        "y": 1420,
+        "wires": [
+            [
+                "f21ff603.38c018"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
