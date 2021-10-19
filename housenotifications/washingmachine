@@ -1,0 +1,679 @@
+[
+    {
+        "id": "7a34c540.8f84c4",
+        "type": "tab",
+        "label": "Storage - Washing Machine",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "dc6083be.ec2ad8",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "washing light off",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_off",
+        "entityId": "light.smart_switch_7_2",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1340,
+        "y": 400,
+        "wires": [
+            [
+                "ef8d8d81.3c844"
+            ]
+        ]
+    },
+    {
+        "id": "b1547d02.33153",
+        "type": "switch",
+        "z": "7a34c540.8f84c4",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "5",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "1",
+                "vt": "num",
+                "v2": "5",
+                "v2t": "num"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "1cd7a0dd.43e91f",
+                "ebf96268.1e776"
+            ],
+            [
+                "b0504927.e67368",
+                "ebf96268.1e776"
+            ],
+            [
+                "86052121.f31f2"
+            ]
+        ]
+    },
+    {
+        "id": "b0504927.e67368",
+        "type": "api-current-state",
+        "z": "7a34c540.8f84c4",
+        "name": "Cycle Switch State",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.washing_machine_cycle",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 390,
+        "y": 360,
+        "wires": [
+            [
+                "7b06b320.f2da6c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3d01cc1a.0527c4",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "cycle off",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.washing_machine_cycle",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 820,
+        "y": 220,
+        "wires": [
+            [
+                "70d84e64.2478b8"
+            ]
+        ]
+    },
+    {
+        "id": "80540aed.a59958",
+        "type": "server-state-changed",
+        "z": "7a34c540.8f84c4",
+        "name": "Washing Power",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.smart_switch_7_electric_consumed_w_2",
+        "entityidfiltertype": "exact",
+        "outputinitially": true,
+        "state_type": "num",
+        "haltifstate": "",
+        "halt_if_type": "num",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "b1547d02.33153"
+            ]
+        ]
+    },
+    {
+        "id": "70d84e64.2478b8",
+        "type": "time-range-switch",
+        "z": "7a34c540.8f84c4",
+        "name": "9:00-21:00",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "09:00",
+        "endTime": "21:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 1110,
+        "y": 220,
+        "wires": [
+            [
+                "ea0f2544.cc8c58",
+                "dc6083be.ec2ad8",
+                "d6c09e60.1932b"
+            ],
+            [
+                "ea0f2544.cc8c58",
+                "dc6083be.ec2ad8",
+                "8e7ad695.2648d8"
+            ]
+        ]
+    },
+    {
+        "id": "d6c09e60.1932b",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"data\":{\"type\":\"announce\",\"method\":\"all\"},\"message\":\"<voice name='Amy'>This is the laundry assistant. The Washing Machine is Now Finished</voice>\",\"target\":[\"media_player.office\",\"media_player.living\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1400,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef8d8d81.3c844",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "washing boolean off",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.washing_machine_on",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1580,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79e5db37.5d97a4",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "washing light on",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.smart_switch_7_2",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cd7a0dd.43e91f",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "cycle on",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.washing_machine_cycle",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 860,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d11e0c22.4ad59",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "washing on",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.washing_machine_on",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 510,
+        "y": 180,
+        "wires": [
+            [
+                "79e5db37.5d97a4"
+            ]
+        ]
+    },
+    {
+        "id": "ea0f2544.cc8c58",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "Sent telegram",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "telegram_bot",
+        "service": "send_message",
+        "entityId": "",
+        "data": "{\"message\":\"| Home Assistant | The washing machine is now finished.\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1380,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8e7ad695.2648d8",
+        "type": "api-call-service",
+        "z": "7a34c540.8f84c4",
+        "name": "Whispher the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media_office",
+        "entityId": "",
+        "data": "{\"data\":{\"type\":\"announce\",\"method\":\"all\"},\"title\":\"From the Laundry Room\",\"message\":\"<amazon:effect name='whispered'><voice name='Amy'>This is the laundry assistant. The Washing Machine is Now Finished</voice></amazon:effect>\",\"target\":[\"media_player.office\",\"media_player.living\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1410,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5962ccfd.176e04",
+        "type": "api-current-state",
+        "z": "7a34c540.8f84c4",
+        "name": "check power",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "2",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "entity_id": "sensor.smart_switch_7_electric_consumed_w_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "5dfccc50.0dd3f4"
+            ],
+            [
+                "1cd7a0dd.43e91f"
+            ]
+        ]
+    },
+    {
+        "id": "7b06b320.f2da6c",
+        "type": "trigger",
+        "z": "7a34c540.8f84c4",
+        "name": "5min",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "5",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 470,
+        "y": 300,
+        "wires": [
+            [
+                "5962ccfd.176e04"
+            ]
+        ]
+    },
+    {
+        "id": "ebf96268.1e776",
+        "type": "api-current-state",
+        "z": "7a34c540.8f84c4",
+        "name": "already on?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "false",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.washing_machine_on",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "d11e0c22.4ad59"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "86052121.f31f2",
+        "type": "api-current-state",
+        "z": "7a34c540.8f84c4",
+        "name": "already on?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "true",
+        "halt_if_type": "bool",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.washing_machine_on",
+        "state_type": "habool",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 710,
+        "y": 520,
+        "wires": [
+            [
+                "dc6083be.ec2ad8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "5dfccc50.0dd3f4",
+        "type": "trigger",
+        "z": "7a34c540.8f84c4",
+        "name": "5min",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "6",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "e1dd7e7.ad6ad8"
+            ]
+        ]
+    },
+    {
+        "id": "e1dd7e7.ad6ad8",
+        "type": "api-current-state",
+        "z": "7a34c540.8f84c4",
+        "name": "check power",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "2",
+        "halt_if_type": "num",
+        "halt_if_compare": "lt",
+        "entity_id": "sensor.smart_switch_7_electric_consumed_w_2",
+        "state_type": "num",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "x": 850,
+        "y": 300,
+        "wires": [
+            [
+                "3d01cc1a.0527c4"
+            ],
+            [
+                "1cd7a0dd.43e91f"
+            ]
+        ]
+    },
+    {
+        "id": "a9c75c6e.8d0e",
+        "type": "inject",
+        "z": "7a34c540.8f84c4",
+        "name": "DUMMY ACT",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 110,
+        "y": 540,
+        "wires": [
+            [
+                "b1547d02.33153"
+            ]
+        ]
+    },
+    {
+        "id": "ef6631f6.a9003",
+        "type": "inject",
+        "z": "7a34c540.8f84c4",
+        "name": "DUMMY ACT",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 350,
+        "y": 540,
+        "wires": [
+            [
+                "5962ccfd.176e04"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
