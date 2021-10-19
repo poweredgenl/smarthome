@@ -1,0 +1,243 @@
+[
+    {
+        "id": "c339420.13c4ec",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Battery checks",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "81582b29.b2e13",
+            "2cf21261.5d395e",
+            "ef6e3a2c.89d7f8",
+            "ed5796b5.308c68",
+            "4532b8ec.592b68",
+            "d324dc10.98cb4",
+            "d80e76d0.1e5668"
+        ],
+        "x": 54,
+        "y": 2259,
+        "w": 1012,
+        "h": 162
+    },
+    {
+        "id": "81582b29.b2e13",
+        "type": "ha-get-entities",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "Check batteries",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "rules": [
+            {
+                "property": "attributes.device_class",
+                "logic": "is",
+                "value": "battery",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "lte",
+                "value": "10",
+                "valueType": "num"
+            },
+            {
+                "property": "attributes.friendly_name",
+                "logic": "is_not",
+                "value": "johndoe Battery Level",
+                "valueType": "str"
+            },
+            {
+                "property": "attributes.friendly_name",
+                "logic": "is_not",
+                "value": "Phone Battery Level",
+                "valueType": "str"
+            },
+            {
+                "property": "attributes.friendly_name",
+                "logic": "is_not",
+                "value": "janedoe Battery Level",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 360,
+        "y": 2300,
+        "wires": [
+            [
+                "2cf21261.5d395e"
+            ]
+        ]
+    },
+    {
+        "id": "2cf21261.5d395e",
+        "type": "template",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "Battery msg",
+        "field": "batteries",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.attributes.friendly_name}} is at {{payload.state}}",
+        "output": "str",
+        "x": 550,
+        "y": 2300,
+        "wires": [
+            [
+                "ef6e3a2c.89d7f8"
+            ]
+        ]
+    },
+    {
+        "id": "ef6e3a2c.89d7f8",
+        "type": "join",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "combine msgs",
+        "mode": "custom",
+        "build": "string",
+        "property": "batteries",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ",",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 720,
+        "y": 2300,
+        "wires": [
+            [
+                "ed5796b5.308c68"
+            ]
+        ]
+    },
+    {
+        "id": "ed5796b5.308c68",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "Compose message",
+        "func": "msg.payload = {}\nmsg.payload.chatId = 1480883129\nmsg.payload.type = \"message\"\nmsg.payload.content = \"| Home Assistant | ALERT \" + msg.batteries\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 2380,
+        "wires": [
+            [
+                "6f3c8a71.eb30c4",
+                "d80e76d0.1e5668"
+            ]
+        ]
+    },
+    {
+        "id": "4532b8ec.592b68",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 2380,
+        "wires": [
+            [
+                "81582b29.b2e13"
+            ]
+        ]
+    },
+    {
+        "id": "d324dc10.98cb4",
+        "type": "schedex",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "ontime": "12:00",
+        "ontopic": "",
+        "onpayload": "",
+        "onoffset": 0,
+        "onrandomoffset": 0,
+        "offtime": "",
+        "offtopic": "",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 140,
+        "y": 2320,
+        "wires": [
+            [
+                "81582b29.b2e13"
+            ]
+        ]
+    },
+    {
+        "id": "d80e76d0.1e5668",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "c339420.13c4ec",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 2300,
+        "wires": []
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
