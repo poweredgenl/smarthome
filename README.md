@@ -106,6 +106,8 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Kitchen check: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the fridge is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
 - Garden: we hate cats in the garden because it keeps the birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this as well via TTS so we can jump to the garden to chase it away.
 - Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
+- Door trigger: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
+- Door welcome message: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
 - Alarm system: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to telegram / sms and creates photos in the process. This flow i wont share ...
 
 ## Todo
