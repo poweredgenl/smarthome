@@ -14,8 +14,10 @@ For our smarthome setup we use the follow components.
 
 - Home Assistant Supervised on Debian (yes i know ... not Red Hat ... yet)
 - Z-zwave via AEOTEC gen5 stick
+  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs
 - Zigbee via/with Philips Hue bridge
 - Wifi / MQTT modules
+  - Shelly 2.5 etc.
 - Node-RED for automation flows
 
 ### Hardware platform
@@ -31,9 +33,11 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Raspberry PI 4b + POE HATs
 - 23" Industrial touchscreen / bezelless for the home dashboard on PI #1
 - P1 cable / reader on PI #2
+- Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
 
 <p align="center">
   <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
+  <img src="https://tweakers.net/i/BnynUxD0-xjVEEZ8QYtpUjkWuh8=/x800/filters:strip_icc():strip_exif()/f/image/MQInl94P9KkwBdvsHLK8Ryuj.jpg?f=fotoalbum_large" />
 </p>
 
 ### Integrations in Home-Assistant enabled
