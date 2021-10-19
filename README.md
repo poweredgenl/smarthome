@@ -87,6 +87,9 @@ All automations below are the ones i have implemented in my home. Those not rela
 - Home build wake up lights - Philips style - with Hue Bulbs and the HASS "next_alarm" sensor.
 - Bathroom humidity control with a standard HASS automation (lazy to migrate it to Node-Red)
 - Home Notfication system with Telegram and Alexa TTS
+- Alarm system with sensors
+- Power monitoring everything / plugs / dimmers etc.
+  - DSMR is reading the central p1 power monitor and gathers this in the HASS energy dashboard.
 
 ### Frigate / Synology surveillance tracking
 
