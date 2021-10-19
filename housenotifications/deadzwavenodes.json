@@ -1,0 +1,219 @@
+[
+    {
+        "id": "9f7c11fa.e4bee",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Dead zwave nodes",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "2d36fb2d.0ff3e4",
+            "edd71abf.4d7b68",
+            "88286892.0baa28",
+            "b1db9397.7612d",
+            "9d5925be.27f4b8",
+            "2f10c607.f5bbca",
+            "4a51b8f6.7aacd8"
+        ],
+        "x": 54,
+        "y": 2479,
+        "w": 1012,
+        "h": 162
+    },
+    {
+        "id": "2d36fb2d.0ff3e4",
+        "type": "ha-get-entities",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "Check zwave",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "rules": [
+            {
+                "property": "attributes.state",
+                "logic": "is",
+                "value": "dead",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 360,
+        "y": 2520,
+        "wires": [
+            [
+                "edd71abf.4d7b68"
+            ]
+        ]
+    },
+    {
+        "id": "edd71abf.4d7b68",
+        "type": "template",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "zwave msg",
+        "field": "zwavecheck",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.attributes.friendly_name}} is {{payload.state}}",
+        "output": "str",
+        "x": 550,
+        "y": 2520,
+        "wires": [
+            [
+                "88286892.0baa28"
+            ]
+        ]
+    },
+    {
+        "id": "88286892.0baa28",
+        "type": "join",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "combine msgs",
+        "mode": "custom",
+        "build": "string",
+        "property": "zwavecheck",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ",",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 720,
+        "y": 2520,
+        "wires": [
+            [
+                "b1db9397.7612d"
+            ]
+        ]
+    },
+    {
+        "id": "b1db9397.7612d",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "Compose message",
+        "func": "msg.payload = {}\nmsg.payload.chatId = 1480883129\nmsg.payload.type = \"message\"\nmsg.payload.content = \"| Home Assistant | ALERT \" + msg.zwavecheck\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 2600,
+        "wires": [
+            [
+                "4a51b8f6.7aacd8",
+                "6f3c8a71.eb30c4"
+            ]
+        ]
+    },
+    {
+        "id": "9d5925be.27f4b8",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 2600,
+        "wires": [
+            [
+                "2d36fb2d.0ff3e4"
+            ]
+        ]
+    },
+    {
+        "id": "2f10c607.f5bbca",
+        "type": "schedex",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "ontime": "12:00",
+        "ontopic": "",
+        "onpayload": "",
+        "onoffset": 0,
+        "onrandomoffset": 0,
+        "offtime": "",
+        "offtopic": "",
+        "offpayload": "",
+        "offoffset": 0,
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 140,
+        "y": 2540,
+        "wires": [
+            [
+                "2d36fb2d.0ff3e4"
+            ]
+        ]
+    },
+    {
+        "id": "4a51b8f6.7aacd8",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "9f7c11fa.e4bee",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 950,
+        "y": 2580,
+        "wires": []
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
