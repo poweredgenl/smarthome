@@ -32,6 +32,10 @@ There are multiple options for running the above components, commonly a Raspberr
 - 23" Industrial touchscreen / bezelless for the home dashboard on PI #1
 - P1 cable / reader on PI #2
 
+<p align="center">
+  <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
+</p>
+
 ### Integrations in Home-Assistant enabled
 
 - Amazon Alexa
