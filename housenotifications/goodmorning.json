@@ -1,0 +1,424 @@
+[
+    {
+        "id": "1cb41dfe.cea432",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Good morning",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "8869ef0a.23227",
+            "4173d36f.978afc",
+            "89ec3d91.93a82",
+            "c66b790d.43d8d8",
+            "78d2c62a.42a868",
+            "a4885065.3b128",
+            "ede55fb9.df4f3",
+            "4656d26a.81f86c",
+            "82e2206f.81db6",
+            "14744e0d.cd9e52",
+            "604e3085.4cd12",
+            "41637fc0.f5a54",
+            "7e58743e.2714ec",
+            "959ae86c.496d58"
+        ],
+        "x": 54,
+        "y": 1599,
+        "w": 1272,
+        "h": 322
+    },
+    {
+        "id": "8869ef0a.23227",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 1840,
+        "wires": [
+            [
+                "78d2c62a.42a868"
+            ]
+        ]
+    },
+    {
+        "id": "4173d36f.978afc",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Compose message - failed",
+        "func": "msg.payload =\n\n\"Last nights backup has failed. Please check home assistant\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1660,
+        "wires": [
+            [
+                "a4885065.3b128",
+                "7e58743e.2714ec"
+            ]
+        ]
+    },
+    {
+        "id": "89ec3d91.93a82",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Good morning",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.goodmorning",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 160,
+        "y": 1640,
+        "wires": [
+            [
+                "4656d26a.81f86c",
+                "959ae86c.496d58"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "c66b790d.43d8d8",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1200,
+        "y": 1740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "78d2c62a.42a868",
+        "type": "api-current-state",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Failed backup",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.backup_status",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 180,
+        "y": 1760,
+        "wires": [
+            [
+                "4173d36f.978afc"
+            ],
+            [
+                "82e2206f.81db6"
+            ]
+        ]
+    },
+    {
+        "id": "a4885065.3b128",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "turn off vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.backup_status",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 940,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ede55fb9.df4f3",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Compose message - morning",
+        "func": "msg.payload =\n\n\"Goodmorning, have a nice day\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 1720,
+        "wires": [
+            [
+                "7e58743e.2714ec"
+            ]
+        ]
+    },
+    {
+        "id": "4656d26a.81f86c",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "turn off vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.goodmorning",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 400,
+        "y": 1640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82e2206f.81db6",
+        "type": "time-range-switch",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "0:00",
+        "endTime": "6:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 390,
+        "y": 1760,
+        "wires": [
+            [],
+            [
+                "14744e0d.cd9e52"
+            ]
+        ]
+    },
+    {
+        "id": "14744e0d.cd9e52",
+        "type": "time-range-switch",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Morning",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "6:00",
+        "endTime": "12:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 400,
+        "y": 1820,
+        "wires": [
+            [
+                "ede55fb9.df4f3"
+            ],
+            [
+                "604e3085.4cd12"
+            ]
+        ]
+    },
+    {
+        "id": "604e3085.4cd12",
+        "type": "time-range-switch",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Afternoon",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "12:00",
+        "endTime": "18:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 400,
+        "y": 1880,
+        "wires": [
+            [
+                "41637fc0.f5a54"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "41637fc0.f5a54",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "Compose message - afternoon",
+        "func": "msg.payload =\n\n\"Good afternoon, enjoy the rest of your day\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 1800,
+        "wires": [
+            [
+                "7e58743e.2714ec"
+            ]
+        ]
+    },
+    {
+        "id": "7e58743e.2714ec",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "1sec",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 990,
+        "y": 1740,
+        "wires": [
+            [
+                "c66b790d.43d8d8"
+            ]
+        ]
+    },
+    {
+        "id": "959ae86c.496d58",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "1cb41dfe.cea432",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 160,
+        "y": 1700,
+        "wires": [
+            [
+                "78d2c62a.42a868"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
