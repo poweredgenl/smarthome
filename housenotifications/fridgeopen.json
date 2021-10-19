@@ -1,0 +1,210 @@
+[
+    {
+        "id": "55dd5694.28ffa8",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Fridge check",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "1c4697fe.873e68",
+            "632df256.0901ec",
+            "5738f051.501bb",
+            "bf5cfd16.d46d1",
+            "43866d65.77f594"
+        ],
+        "x": 54,
+        "y": 2659,
+        "w": 852,
+        "h": 162
+    },
+    {
+        "id": "1c4697fe.873e68",
+        "type": "server-state-changed",
+        "z": "e9e38252.ae174",
+        "g": "55dd5694.28ffa8",
+        "name": "Refrigerator sensor",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "binary_sensor.refrigirator_access_control_window_door_is_open",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "150",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 170,
+        "y": 2720,
+        "wires": [
+            [
+                "5738f051.501bb"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "632df256.0901ec",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "55dd5694.28ffa8",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"data\":{\"type\":\"announce\",\"method\":\"all\"},\"message\":\"<voice name='Amy'>This is the kitchen assistant. The refrigerator door is still open</voice>\",\"target\":[\"media_player.office\",\"media_player.attic\",\"media_player.meterkast\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 780,
+        "y": 2700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5738f051.501bb",
+        "type": "time-range-switch",
+        "z": "e9e38252.ae174",
+        "g": "55dd5694.28ffa8",
+        "name": "9:00-21:00",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "09:00",
+        "endTime": "21:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 510,
+        "y": 2720,
+        "wires": [
+            [
+                "632df256.0901ec",
+                "bf5cfd16.d46d1"
+            ],
+            [
+                "bf5cfd16.d46d1"
+            ]
+        ]
+    },
+    {
+        "id": "bf5cfd16.d46d1",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "55dd5694.28ffa8",
+        "name": "Sent telegram",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "telegram_bot",
+        "service": "send_message",
+        "entityId": "",
+        "data": "{\"message\":\"| Home Assistant | Warning: refrigerator door is still open.\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 780,
+        "y": 2760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "43866d65.77f594",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "55dd5694.28ffa8",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 210,
+        "y": 2780,
+        "wires": [
+            [
+                "bf5cfd16.d46d1"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
