@@ -1,0 +1,181 @@
+[
+    {
+        "id": "6d3ab085.05a68",
+        "type": "tab",
+        "label": "Garden",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "30e293c4.828c0c",
+        "type": "trigger-state",
+        "z": "6d3ab085.05a68",
+        "name": "Cat(s) in the garden?",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "binary_sensor.garden_cat_motion",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 280,
+        "y": 340,
+        "wires": [
+            [
+                "cb20dfd8.1d6f5",
+                "bca092ae.23541"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "cb20dfd8.1d6f5",
+        "type": "time-range-switch",
+        "z": "6d3ab085.05a68",
+        "name": "",
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "startTime": "08:00",
+        "endTime": "21:00",
+        "startOffset": 0,
+        "endOffset": 0,
+        "x": 690,
+        "y": 340,
+        "wires": [
+            [
+                "7ca5b1b9.530f",
+                "54c1125c.a2ccbc",
+                "a467a01d.ec3fa"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7ca5b1b9.530f",
+        "type": "api-call-service",
+        "z": "6d3ab085.05a68",
+        "name": "Announce office",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media_office",
+        "entityId": "",
+        "data": "{ \"message\": \"There is a cat in the garden\", \"data\": { \"type\": \"announce\" }, \"target\": \"{{service}}\" } ",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 940,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54c1125c.a2ccbc",
+        "type": "api-call-service",
+        "z": "6d3ab085.05a68",
+        "name": "Announce dining",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media_dining",
+        "entityId": "",
+        "data": "{ \"message\": \"There is a cat in the garden\", \"data\": { \"type\": \"announce\" }, \"target\": \"{{service}}\" } ",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 950,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bca092ae.23541",
+        "type": "api-call-service",
+        "z": "6d3ab085.05a68",
+        "name": "Sent telegram",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "telegram_bot",
+        "service": "send_message",
+        "entityId": "",
+        "data": "{\"message\":\"| Home Assistant | There is a cat in the garden.\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 730,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a467a01d.ec3fa",
+        "type": "api-call-service",
+        "z": "6d3ab085.05a68",
+        "name": "Announce dining",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media_living",
+        "entityId": "",
+        "data": "{ \"message\": \"There is a cat in the garden\", \"data\": { \"type\": \"announce\" }, \"target\": \"{{service}}\" } ",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 970,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
