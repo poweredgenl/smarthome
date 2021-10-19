@@ -1,0 +1,148 @@
+[
+    {
+        "id": "de5646b7.694808",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Backup check",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "e25a3acf.f88608",
+            "aba60c08.3fa45",
+            "f8c1d1b0.6e1e2"
+        ],
+        "x": 54,
+        "y": 2839,
+        "w": 632,
+        "h": 122
+    },
+    {
+        "id": "e25a3acf.f88608",
+        "type": "server-state-changed",
+        "z": "e9e38252.ae174",
+        "g": "de5646b7.694808",
+        "name": "Backup sensor",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.samba_backup",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "FAILED",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": true,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "seconds",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 160,
+        "y": 2880,
+        "wires": [
+            [
+                "aba60c08.3fa45",
+                "f8c1d1b0.6e1e2"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "aba60c08.3fa45",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "de5646b7.694808",
+        "name": "Sent telegram",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "telegram_bot",
+        "service": "send_message",
+        "entityId": "",
+        "data": "{\"message\":\"| Home Assistant | BACKUP: last backup has failed.\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 580,
+        "y": 2880,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f8c1d1b0.6e1e2",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "de5646b7.694808",
+        "name": "turn on vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "entityId": "input_boolean.backup_status",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 380,
+        "y": 2920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
