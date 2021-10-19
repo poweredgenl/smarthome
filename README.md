@@ -110,6 +110,6 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Out of bed lights: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - Grocy / Groceries inventory management: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet. WIP untill i find something to monitor.
 
-## Commnity ideas?
+## Community ideas?
 
 Do you have ideas which i didnt have thought about ? Perhaps you can suggest them so i can build them as well.
