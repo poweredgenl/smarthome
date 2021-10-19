@@ -109,6 +109,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Door trigger: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
 - Door welcome message: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
 - Alarm system: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to telegram / sms and creates photos in the process. This flow i wont share ...
+- Washing machine + dryer: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
 
 ## Todo
 
