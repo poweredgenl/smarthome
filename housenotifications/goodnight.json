@@ -1,0 +1,259 @@
+[
+    {
+        "id": "59b22cc5.0bd1a4",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Good night",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "865fa3dd.5ff33",
+            "39d40fcd.3a09f",
+            "f85b428f.a9076",
+            "559db528.cf936c",
+            "82882a5f.1a8de8",
+            "a5989eee.e0e7c",
+            "966261f1.42fda"
+        ],
+        "x": 54,
+        "y": 1959,
+        "w": 972,
+        "h": 282
+    },
+    {
+        "id": "865fa3dd.5ff33",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "TEST",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 2200,
+        "wires": [
+            [
+                "82882a5f.1a8de8"
+            ]
+        ]
+    },
+    {
+        "id": "39d40fcd.3a09f",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "Compose message - lock car",
+        "func": "msg.payload =\n\n\"Hi, i think the BMW is not locked yet. Please lock the car before going to sleep.\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 630,
+        "y": 2160,
+        "wires": [
+            [
+                "559db528.cf936c"
+            ]
+        ]
+    },
+    {
+        "id": "f85b428f.a9076",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "Good night",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.goodnight",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 150,
+        "y": 2000,
+        "wires": [
+            [
+                "a5989eee.e0e7c",
+                "966261f1.42fda"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "559db528.cf936c",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media_bedroom",
+        "entityId": "",
+        "data": "{\"data\":{\"type\":\"tts\"},\"message\":\"{{payload}}\"}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 900,
+        "y": 2100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "82882a5f.1a8de8",
+        "type": "api-current-state",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "Car open?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "binary_sensor.320i_door_lock_state",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 590,
+        "y": 2080,
+        "wires": [
+            [
+                "39d40fcd.3a09f"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a5989eee.e0e7c",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "turn off vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.goodnight",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 400,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "966261f1.42fda",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "59b22cc5.0bd1a4",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 200,
+        "y": 2100,
+        "wires": [
+            [
+                "82882a5f.1a8de8"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
