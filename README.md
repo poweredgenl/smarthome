@@ -1,3 +1,5 @@
+![SmartHome](https://badgen.net/github/stars/poweredgenl/smarthome)
+
 # Peter-Paul's smarthome project
 
 ## Intro
