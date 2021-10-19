@@ -1,0 +1,273 @@
+[
+    {
+        "id": "6eddd947b9d3b23d",
+        "type": "group",
+        "z": "464ff8712d4d8575",
+        "name": "Master bedroom radiators",
+        "style": {
+            "fill": "#bfc7d7",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "0847c8b72d1bf49a",
+            "b338cbe9c464d2de",
+            "ca79a8d2b1d16c5e",
+            "49b13ce78b370bf8",
+            "7d417a612be32d12",
+            "8cb796650152df99",
+            "ea8af3714ac33c2b"
+        ],
+        "x": 54,
+        "y": 219,
+        "w": 972,
+        "h": 222
+    },
+    {
+        "id": "0847c8b72d1bf49a",
+        "type": "trigger-state",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "Bedroom window left",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "binary_sensor.master_bedroom_left_window_access_control_window_door_is_open",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 200,
+        "y": 260,
+        "wires": [
+            [
+                "b338cbe9c464d2de"
+            ],
+            [
+                "8cb796650152df99"
+            ]
+        ]
+    },
+    {
+        "id": "b338cbe9c464d2de",
+        "type": "api-call-service",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "turn off radiator",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "climate",
+        "service": "set_temperature",
+        "entityId": "climate.thermostatic_valve_3",
+        "data": "{\"temperature\":\"14\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 620,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca79a8d2b1d16c5e",
+        "type": "api-call-service",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "reset to upstairs value",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "climate",
+        "service": "set_temperature",
+        "entityId": "climate.thermostatic_valve_3",
+        "data": "{\"temperature\": {{payload}} }",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 900,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49b13ce78b370bf8",
+        "type": "inject",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "test",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 400,
+        "wires": [
+            [
+                "8cb796650152df99"
+            ]
+        ]
+    },
+    {
+        "id": "7d417a612be32d12",
+        "type": "template",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "form message",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{data.attributes.temperature}}",
+        "output": "str",
+        "x": 620,
+        "y": 340,
+        "wires": [
+            [
+                "ca79a8d2b1d16c5e"
+            ]
+        ]
+    },
+    {
+        "id": "8cb796650152df99",
+        "type": "api-current-state",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "Get temp",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "climate.upstairs_thermostats",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "7d417a612be32d12"
+            ]
+        ]
+    },
+    {
+        "id": "ea8af3714ac33c2b",
+        "type": "trigger-state",
+        "z": "464ff8712d4d8575",
+        "g": "6eddd947b9d3b23d",
+        "name": "Bedroom window right",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "binary_sensor.master_bedroom_right_window_access_control_window_door_is_open",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 200,
+        "y": 320,
+        "wires": [
+            [
+                "b338cbe9c464d2de"
+            ],
+            [
+                "8cb796650152df99"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
