@@ -14,7 +14,7 @@ For our smarthome setup we use the follow components.
 
 - Home Assistant Supervised on Debian (yes i know ... not Red Hat ... yet)
 - Z-zwave via AEOTEC gen5 stick
-  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs
+  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
 - Zigbee via/with Philips Hue bridge
 - Wifi / MQTT modules
   - Shelly 2.5 etc.
@@ -76,7 +76,7 @@ I run one of the raspberry PI's with a industrial touchscrene, which is seamless
 
 I added: /usr/bin/chromium-browser --kiosk --disable-restore-session-state --disable-component-update http://HASSIP:8123/DASHBOARD-NAME/default_view?hide_sidebar=
 
-I instelled via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
+I installed via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
 
 ## Automations
 
@@ -90,6 +90,7 @@ All automations below are the ones i have implemented in my home. Those not rela
 - Alarm system with sensors
 - Power monitoring everything / plugs / dimmers etc.
   - DSMR is reading the central p1 power monitor and gathers this in the HASS energy dashboard.
+- The upstairs thermostats are joined in a climate group so i can control them as a whole floor. (eurotronic spirit zwave)
 
 ### Frigate / Synology surveillance tracking
 
@@ -118,6 +119,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Alarm system: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to telegram / sms and creates photos in the process. This flow i wont share ...
 - Washing machine + dryer: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
 - Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the radiator at a very low temperature level. (14 degrees celcius)
+- Smoke detection: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 
 ## Todo
 
