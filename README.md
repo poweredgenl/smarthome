@@ -49,7 +49,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Buienradar (weather forecast the Netherlands)
 - CO2 Signal
 - DSMR reader
-- Frigate NVR (on Synology)
+- Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - Grocy
 - HACS (Home Assistant community store)
