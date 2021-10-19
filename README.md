@@ -8,10 +8,15 @@ H17 refers to the street and housename ... so theres the history in that. Im liv
 
 ## Platform overview
 
+I have a generic virtualized platform which runs a multitude of servers.
+
+- firewall, domain controller, monitoring, docker hosts, steppingstones. 
+
 For our smarthome setup we use the follow components.
 
 ### Basics
 
+HASS virtual machnine
 - Home Assistant Supervised on Debian (yes i know ... not Red Hat ... yet)
 - Z-zwave via AEOTEC gen5 stick
   - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
@@ -19,6 +24,15 @@ For our smarthome setup we use the follow components.
 - Wifi / MQTT modules
   - Shelly 2.5 etc.
 - Node-RED for automation flows
+
+Docker virtual machine
+- Compreface (AI/ML vision API)
+- DSMR readers
+- Portainer
+- Monocle cam
+- Double-take (see below)
+- Deepstack (testing)
+
 
 ### Hardware platform
 
@@ -91,6 +105,7 @@ All automations below are the ones i have implemented in my home. Those not rela
 - Power monitoring everything / plugs / dimmers etc.
   - DSMR is reading the central p1 power monitor and gathers this in the HASS energy dashboard.
 - The upstairs thermostats are joined in a climate group so i can control them as a whole floor. (eurotronic spirit zwave)
+- Nightly the HASS and frigate/AI-ML setup is backupped and transferred 1 locally to the drive 2 copied to the NAS 3 synced with a cloud storage provider. (using the 3 2 1 method for backups)
 
 ### Frigate / Synology surveillance tracking
 
