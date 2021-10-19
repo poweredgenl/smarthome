@@ -1,0 +1,642 @@
+[
+    {
+        "id": "cacf79f2.c9b628",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "WHERE IS WHO?",
+        "style": {
+            "stroke": "none",
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "69aa1a82.df4fb4",
+            "678bc001.f38",
+            "f9f4ccba.d2551",
+            "f79f4107.15e25",
+            "33574ffd.0332f",
+            "980f72da.6551f",
+            "f65fdd0b.c4965",
+            "b82dd296.d82c7",
+            "34e342d0.e435ae",
+            "b0e79c93.83d1d",
+            "222daf18.c4045",
+            "2bd09a3d.6e7126",
+            "137720c7.87d44f",
+            "7a7f542a.6293fc",
+            "c1efacc2.07b11",
+            "334d8c5e.f7e0b4",
+            "d9cc9c5c1d9de0e8",
+            "163439cdc67f1ca0",
+            "fdae6259d1c5602c",
+            "0a8e6335e36483a3"
+        ],
+        "x": 54,
+        "y": 359,
+        "w": 1492,
+        "h": 482
+    },
+    {
+        "id": "69aa1a82.df4fb4",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "Where is Susanne",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.where_is_susanne",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 170,
+        "y": 520,
+        "wires": [
+            [
+                "d9cc9c5c1d9de0e8"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "678bc001.f38",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1100,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f9f4ccba.d2551",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.where_is_susanne",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1100,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f79f4107.15e25",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "SUUS AWAY DYN",
+        "func": "msg.payload =\n\n\"Sure, Susanne's last known location is,\"+\n\"{{states.person.susanne_kurstjens.state}}\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 500,
+        "wires": [
+            [
+                "f9f4ccba.d2551",
+                "678bc001.f38",
+                "2bd09a3d.6e7126"
+            ]
+        ]
+    },
+    {
+        "id": "33574ffd.0332f",
+        "type": "api-current-state",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "SUUS HOME?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.susanne_kurstjens",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 540,
+        "y": 460,
+        "wires": [
+            [
+                "980f72da.6551f"
+            ],
+            [
+                "7a7f542a.6293fc"
+            ]
+        ]
+    },
+    {
+        "id": "980f72da.6551f",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "SUUS HOME",
+        "func": "msg.payload =\n\n\"Sure, Susanne is last seen at the\"+\n\"{{states.sensor.double_take_susanne.state}} area\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 460,
+        "wires": [
+            [
+                "f9f4ccba.d2551",
+                "678bc001.f38",
+                "2bd09a3d.6e7126"
+            ]
+        ]
+    },
+    {
+        "id": "f65fdd0b.c4965",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "Where is Peter-Paul",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.where_is_peter_paul",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 180,
+        "y": 740,
+        "wires": [
+            [
+                "163439cdc67f1ca0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b82dd296.d82c7",
+        "type": "api-current-state",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "PP HOME?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "person.peter_paul_kurstjens",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 550,
+        "y": 720,
+        "wires": [
+            [
+                "34e342d0.e435ae"
+            ],
+            [
+                "137720c7.87d44f"
+            ]
+        ]
+    },
+    {
+        "id": "34e342d0.e435ae",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "PP HOME",
+        "func": "msg.payload =\n\n\"Sure, Peter-Paul is last seen at the\"+\n\"{{states.sensor.double_take_peterpaul.state}} area\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 700,
+        "wires": [
+            [
+                "222daf18.c4045",
+                "678bc001.f38",
+                "2bd09a3d.6e7126"
+            ]
+        ]
+    },
+    {
+        "id": "b0e79c93.83d1d",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "PP AWAY DYN",
+        "func": "msg.payload =\n\n\"Sure, Peter-Paul's last known location is,\"+\n\"{{states.person.peter_paul_kurstjens.state}}\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 740,
+        "wires": [
+            [
+                "222daf18.c4045",
+                "678bc001.f38",
+                "2bd09a3d.6e7126"
+            ]
+        ]
+    },
+    {
+        "id": "222daf18.c4045",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.where_is_peter_paul",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1100,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2bd09a3d.6e7126",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1430,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "137720c7.87d44f",
+        "type": "switch",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "not_home",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "not_home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 800,
+        "wires": [
+            [
+                "b0e79c93.83d1d"
+            ],
+            [
+                "d043a73f.87f6c8"
+            ]
+        ]
+    },
+    {
+        "id": "7a7f542a.6293fc",
+        "type": "switch",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "neq",
+                "v": "not_home",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "not_home",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 540,
+        "wires": [
+            [
+                "f79f4107.15e25"
+            ],
+            [
+                "4ef399dd.2f3978"
+            ]
+        ]
+    },
+    {
+        "id": "c1efacc2.07b11",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "fdae6259d1c5602c"
+            ]
+        ]
+    },
+    {
+        "id": "334d8c5e.f7e0b4",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 320,
+        "y": 600,
+        "wires": [
+            [
+                "0a8e6335e36483a3"
+            ]
+        ]
+    },
+    {
+        "id": "d9cc9c5c1d9de0e8",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 330,
+        "y": 460,
+        "wires": [
+            [
+                "c1efacc2.07b11"
+            ]
+        ]
+    },
+    {
+        "id": "163439cdc67f1ca0",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 330,
+        "y": 680,
+        "wires": [
+            [
+                "334d8c5e.f7e0b4"
+            ]
+        ]
+    },
+    {
+        "id": "fdae6259d1c5602c",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 530,
+        "y": 400,
+        "wires": [
+            [
+                "33574ffd.0332f"
+            ]
+        ]
+    },
+    {
+        "id": "0a8e6335e36483a3",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "cacf79f2.c9b628",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "b82dd296.d82c7"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
