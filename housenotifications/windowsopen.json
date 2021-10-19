@@ -1,0 +1,548 @@
+[
+    {
+        "id": "daa9bc74.bd3fd",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "Which windows are open",
+        "style": {
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "bee50882.a34668",
+            "22df13f0.65ca3c",
+            "9a31e80c.7d48f8",
+            "47e5dffe.cf0ab",
+            "dc90bb35.7db918",
+            "9d187e88.f02e1",
+            "c5b7f017.e9c7",
+            "74652a33.b4b594",
+            "1784be37.1cc902",
+            "45a81f5b.72311",
+            "d58d747e.a272b8",
+            "436a3fca.f8886",
+            "62c6de79.f90fb",
+            "c6d9793f.4c0838",
+            "5caaddfbbb73b801",
+            "e7d69ed7.15f9f",
+            "02a4781ae46e4414"
+        ],
+        "x": 54,
+        "y": 879,
+        "w": 1532,
+        "h": 322
+    },
+    {
+        "id": "bee50882.a34668",
+        "type": "switch",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 650,
+        "y": 1060,
+        "wires": [
+            [
+                "22df13f0.65ca3c"
+            ],
+            [
+                "74652a33.b4b594"
+            ]
+        ]
+    },
+    {
+        "id": "22df13f0.65ca3c",
+        "type": "ha-get-entities",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Which Doors/Windows?",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "rules": [
+            {
+                "property": "entity_id",
+                "logic": "in_group",
+                "value": "group.windowgroup",
+                "valueType": "str"
+            },
+            {
+                "property": "state",
+                "logic": "includes",
+                "value": "on, open",
+                "valueType": "str"
+            }
+        ],
+        "output_type": "split",
+        "output_empty_results": false,
+        "output_location_type": "msg",
+        "output_location": "payload",
+        "output_results_count": 1,
+        "x": 770,
+        "y": 960,
+        "wires": [
+            [
+                "9a31e80c.7d48f8"
+            ]
+        ]
+    },
+    {
+        "id": "9a31e80c.7d48f8",
+        "type": "template",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Format Msg",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.attributes.friendly_name}}",
+        "output": "str",
+        "x": 870,
+        "y": 1060,
+        "wires": [
+            [
+                "47e5dffe.cf0ab"
+            ]
+        ]
+    },
+    {
+        "id": "47e5dffe.cf0ab",
+        "type": "join",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": ", ",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 1070,
+        "y": 960,
+        "wires": [
+            [
+                "45a81f5b.72311",
+                "c5b7f017.e9c7",
+                "1784be37.1cc902"
+            ]
+        ]
+    },
+    {
+        "id": "dc90bb35.7db918",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Window checker",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.open_windows",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 170,
+        "y": 1020,
+        "wires": [
+            [
+                "5caaddfbbb73b801"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9d187e88.f02e1",
+        "type": "api-current-state",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Windows open?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 1,
+        "halt_if": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "group.windowgroup",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "override_topic": false,
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "x": 480,
+        "y": 960,
+        "wires": [
+            [
+                "bee50882.a34668"
+            ]
+        ]
+    },
+    {
+        "id": "c5b7f017.e9c7",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1360,
+        "y": 980,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "74652a33.b4b594",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "No open windows",
+        "func": "msg.payload =\n\n\"I checked the house and there are currently no open windows.\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 1140,
+        "wires": [
+            [
+                "1784be37.1cc902",
+                "d58d747e.a272b8",
+                "62c6de79.f90fb"
+            ]
+        ]
+    },
+    {
+        "id": "1784be37.1cc902",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.open_windows",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1340,
+        "y": 1100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45a81f5b.72311",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "d58d747e.a272b8",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1470,
+        "y": 1160,
+        "wires": []
+    },
+    {
+        "id": "436a3fca.f8886",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 960,
+        "wires": [
+            [
+                "9d187e88.f02e1"
+            ]
+        ]
+    },
+    {
+        "id": "62c6de79.f90fb",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1360,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6d9793f.4c0838",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 1060,
+        "wires": [
+            [
+                "02a4781ae46e4414"
+            ]
+        ]
+    },
+    {
+        "id": "5caaddfbbb73b801",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 330,
+        "y": 1120,
+        "wires": [
+            [
+                "c6d9793f.4c0838"
+            ]
+        ]
+    },
+    {
+        "id": "e7d69ed7.15f9f",
+        "type": "inject",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "",
+        "props": [
+            {
+                "p": "payload",
+                "v": "",
+                "vt": "date"
+            },
+            {
+                "p": "topic",
+                "v": "",
+                "vt": "string"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 660,
+        "y": 1140,
+        "wires": [
+            [
+                "74652a33.b4b594"
+            ]
+        ]
+    },
+    {
+        "id": "02a4781ae46e4414",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "daa9bc74.bd3fd",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 450,
+        "y": 1000,
+        "wires": [
+            [
+                "9d187e88.f02e1"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
