@@ -1,0 +1,259 @@
+[
+    {
+        "id": "2c3eb1c1.6c453e",
+        "type": "group",
+        "z": "e9e38252.ae174",
+        "name": "HOUSE STATUS POWER UPS",
+        "style": {
+            "stroke": "none",
+            "fill": "#d1d1d1",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "49ce17b4.a3a428",
+            "f80d6e94.e4c48",
+            "cb475c.a14b68a8",
+            "e4a3dddf.77a8f",
+            "ca721371.dcd36",
+            "bb8f5734.70df28",
+            "61b410b4.f6efa",
+            "ca394d83.729d7"
+        ],
+        "x": 54,
+        "y": 59,
+        "w": 912,
+        "h": 222
+    },
+    {
+        "id": "49ce17b4.a3a428",
+        "type": "trigger-state",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "Activate",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityid": "input_boolean.house_status",
+        "entityidfiltertype": "exact",
+        "debugenabled": false,
+        "constraints": [
+            {
+                "targetType": "this_entity",
+                "targetValue": "",
+                "propertyType": "current_state",
+                "comparatorType": "is",
+                "comparatorValueDatatype": "str",
+                "comparatorValue": "on",
+                "propertyValue": "new_state.state"
+            }
+        ],
+        "outputs": 2,
+        "customoutputs": [],
+        "outputinitially": false,
+        "state_type": "str",
+        "x": 140,
+        "y": 120,
+        "wires": [
+            [
+                "ca394d83.729d7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f80d6e94.e4c48",
+        "type": "debug",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "cb475c.a14b68a8",
+        "type": "function",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "Compose message",
+        "func": "msg.payload =\n\n\"Sure, here's the overview. The power usage is \"+\n\"{{states.sensor.power_consumption_w.state}} watts\"+ \", \" +\n\n\"and the UPS remaning runtime is\"+\n\"{{states.sensor.upsstorage_battery_minutes.state}} minutes in the serverrack, {{states.sensor.ups_hallway_battery_minutes.state}} minutes in the hallway.\"\n\nreturn msg",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 100,
+        "wires": [
+            [
+                "e4a3dddf.77a8f",
+                "f80d6e94.e4c48"
+            ]
+        ]
+    },
+    {
+        "id": "e4a3dddf.77a8f",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "Nofity the House Hold",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "notify",
+        "service": "alexa_media",
+        "entityId": "",
+        "data": "{\"message\":\"{{payload}}\",\"data\":{\"type\":\"tts\"},\"target\":[\"{{states.sensor.last_alexa.state}}\"]}",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 840,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca721371.dcd36",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "turn of vswitch",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.house_status",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 820,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bb8f5734.70df28",
+        "type": "api-call-service",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "update_last_call",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "alexa_media",
+        "service": "update_last_called",
+        "entityId": "",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "61b410b4.f6efa",
+                "ca721371.dcd36"
+            ]
+        ]
+    },
+    {
+        "id": "61b410b4.f6efa",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 450,
+        "y": 160,
+        "wires": [
+            [
+                "cb475c.a14b68a8"
+            ]
+        ]
+    },
+    {
+        "id": "ca394d83.729d7",
+        "type": "trigger",
+        "z": "e9e38252.ae174",
+        "g": "2c3eb1c1.6c453e",
+        "name": "wait",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "pay",
+        "duration": "1000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "override",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 190,
+        "y": 220,
+        "wires": [
+            [
+                "bb8f5734.70df28"
+            ]
+        ]
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
