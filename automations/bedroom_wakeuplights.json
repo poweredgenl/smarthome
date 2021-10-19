@@ -1,0 +1,1725 @@
+[
+    {
+        "id": "48c677fd0b35b6c4",
+        "type": "tab",
+        "label": "Bedroom",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "20c296ee70adad6b",
+        "type": "group",
+        "z": "48c677fd0b35b6c4",
+        "name": "Wake up light Suus",
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true,
+            "color": "#000000",
+            "fill-opacity": "0.33"
+        },
+        "nodes": [
+            "f710a07aed115b79",
+            "cb412c972ca2f28e",
+            "1080fcef0487a62e",
+            "e5ca926589c43db7",
+            "8e59eaa177321f30",
+            "f4d64255d98d9216",
+            "f587b0f0fee3ea1d",
+            "142d6f3e895f8ec7",
+            "1ed143c7abf0d3f2",
+            "0cd4dcaa2bd76b94",
+            "558d10efeadf7d61",
+            "b457554111bab002",
+            "6b7cc4997fda0ad9",
+            "403ed98dcda5e7cd",
+            "70677c717173b66a",
+            "9159c25433f26a83",
+            "14c98c13c7d88e81",
+            "467fcf9aa0fa6f05",
+            "f3c377a9e21fea52",
+            "435c29fa1b4e05c8",
+            "f65351a4e0c40bb1"
+        ],
+        "x": 34,
+        "y": 959,
+        "w": 1232,
+        "h": 442
+    },
+    {
+        "id": "2abde08762a5c5f1",
+        "type": "group",
+        "z": "48c677fd0b35b6c4",
+        "name": "Snooze timer PP",
+        "style": {
+            "fill": "#e3f3d3",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "5a8bf90671efd5ff",
+            "839bd919322280d9",
+            "d8ecbfbed892d2ed",
+            "a4a3241034570daa"
+        ],
+        "x": 1314,
+        "y": 599,
+        "w": 712,
+        "h": 162
+    },
+    {
+        "id": "4d717afb23e9b4f0",
+        "type": "group",
+        "z": "48c677fd0b35b6c4",
+        "name": "Check new alarm PP",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "10da159012df5787",
+            "4901d6d88a14425c",
+            "9a3472a2a89b3ecb",
+            "0819f5a44af90e72",
+            "a92dc4d30d797fa2"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 772,
+        "h": 182
+    },
+    {
+        "id": "52b7dc168ecf96ba",
+        "type": "group",
+        "z": "48c677fd0b35b6c4",
+        "name": "Wake up light PP",
+        "style": {
+            "fill": "#bfdbef",
+            "label": true,
+            "color": "#000000"
+        },
+        "nodes": [
+            "d228445d.4259f8",
+            "ba532104.74a48",
+            "e7a99d1f.bdef",
+            "e25ce15f.614ee",
+            "7db42b.e3de6bd4",
+            "5f30d3cb.1aadac",
+            "de710702.9a2d98",
+            "3df7037a.2f373c",
+            "47ca214a.cd1c1",
+            "cfe7b8ae.660428",
+            "b361dc76.e4a18",
+            "235e234a.7b2aac",
+            "b938cf54.1bdd3",
+            "5a93ca40.9dd574",
+            "e34ba2ee.19df8",
+            "ba02b2aa47fad457",
+            "fdb01ee9df9d1d3b",
+            "7a4b8a1cbcb4bd12",
+            "60097ff1233862c1",
+            "9928139de1a200c0",
+            "d7faa693a010ae50"
+        ],
+        "x": 34,
+        "y": 259,
+        "w": 1232,
+        "h": 442
+    },
+    {
+        "id": "96de77322a4a63a2",
+        "type": "group",
+        "z": "48c677fd0b35b6c4",
+        "name": "Check new alarm Suus",
+        "style": {
+            "fill": "#ffbfbf",
+            "label": true,
+            "color": "#000000",
+            "fill-opacity": "0.45"
+        },
+        "nodes": [
+            "b21c3db364c53148",
+            "7c18a79e0937357e",
+            "6847559701a26c51",
+            "fc1f0c06669265bb",
+            "15d86a0a277ff7b5"
+        ],
+        "x": 34,
+        "y": 739,
+        "w": 772,
+        "h": 182
+    },
+    {
+        "id": "10da159012df5787",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "4d717afb23e9b4f0",
+        "name": "check for clock app",
+        "property": "data.new_state.attributes.Package",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "com.sec.android.app.clockpackage",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "9a3472a2a89b3ecb"
+            ],
+            [
+                "4901d6d88a14425c"
+            ]
+        ]
+    },
+    {
+        "id": "d228445d.4259f8",
+        "type": "function",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Get day of week",
+        "func": "var day = new Date().getDay();\n\nvar isWeekend = (day === 6) || (day === 0); \n\nreturn {\n    payload: isWeekend,\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 180,
+        "y": 460,
+        "wires": [
+            [
+                "ba532104.74a48"
+            ]
+        ]
+    },
+    {
+        "id": "ba532104.74a48",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Is it weekend?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 500,
+        "wires": [
+            [
+                "e7a99d1f.bdef"
+            ],
+            [
+                "e25ce15f.614ee"
+            ]
+        ]
+    },
+    {
+        "id": "e7a99d1f.bdef",
+        "type": "api-current-state",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Enabled on weekends?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.wakeup_weekend_pp",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 450,
+        "y": 460,
+        "wires": [
+            [
+                "e25ce15f.614ee"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e25ce15f.614ee",
+        "type": "api-current-state",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Enabled?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.wakeup_enabled_pp",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 440,
+        "y": 520,
+        "wires": [
+            [
+                "7db42b.e3de6bd4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "7db42b.e3de6bd4",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "1%",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.mini_dimmer_6",
+        "data": "{\"brightness\":1}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 650,
+        "y": 520,
+        "wires": [
+            [
+                "5f30d3cb.1aadac",
+                "fdb01ee9df9d1d3b"
+            ]
+        ]
+    },
+    {
+        "id": "5f30d3cb.1aadac",
+        "type": "looptimer",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "duration": "1",
+        "units": "Minute",
+        "maxloops": "30",
+        "maxtimeout": "35",
+        "maxtimeoutunits": "Minute",
+        "name": "",
+        "x": 840,
+        "y": 520,
+        "wires": [
+            [
+                "ba02b2aa47fad457"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "de710702.9a2d98",
+        "type": "api-render-template",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Get new light setting",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "template": "{{ [250, state_attr('light.mini_dimmer_6', 'brightness') + 9] | min }}",
+        "resultsLocation": "payload",
+        "resultsLocationType": "msg",
+        "templateLocation": "template",
+        "templateLocationType": "msg",
+        "x": 1140,
+        "y": 520,
+        "wires": [
+            [
+                "3df7037a.2f373c"
+            ]
+        ]
+    },
+    {
+        "id": "3df7037a.2f373c",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Increase light",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.mini_dimmer_6",
+        "data": "{\"brightness_step_pct\":\"2\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1140,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47ca214a.cd1c1",
+        "type": "function",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Parse time",
+        "func": "new_msg = {\n    payload: {\n        ontime: msg.data.new_state.attributes[\"Local Time\"].substr(11,15),\n        offtime: msg.data.new_state.attributes[\"Local Time\"].substr(11,15)\n    }\n}\nreturn new_msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 340,
+        "wires": [
+            [
+                "cfe7b8ae.660428"
+            ]
+        ]
+    },
+    {
+        "id": "cfe7b8ae.660428",
+        "type": "schedex",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Trigger at time",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "ontime": "7:00",
+        "ontopic": "",
+        "onpayload": "on",
+        "onoffset": "-30",
+        "onrandomoffset": 0,
+        "offtime": "07:45",
+        "offtopic": "",
+        "offpayload": "off",
+        "offoffset": "60",
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 440,
+        "y": 340,
+        "wires": [
+            [
+                "b361dc76.e4a18"
+            ]
+        ]
+    },
+    {
+        "id": "b361dc76.e4a18",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "is on",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 340,
+        "wires": [
+            [
+                "d228445d.4259f8"
+            ]
+        ]
+    },
+    {
+        "id": "235e234a.7b2aac",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Time setting input",
+        "info": "",
+        "x": 150,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b938cf54.1bdd3",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Trigger at the configured time",
+        "info": "",
+        "x": 500,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "5a93ca40.9dd574",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Check if the wake-up light should be enabled on this day of the week",
+        "info": "",
+        "x": 310,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "e34ba2ee.19df8",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Run the wake-up sequence",
+        "info": "",
+        "x": 800,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5a8bf90671efd5ff",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "d": true,
+        "g": "2abde08762a5c5f1",
+        "name": "Snooze Off (Restart Loop)",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.snooze_pp",
+        "data": "",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1450,
+        "y": 640,
+        "wires": [
+            [
+                "839bd919322280d9"
+            ]
+        ]
+    },
+    {
+        "id": "839bd919322280d9",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "d": true,
+        "g": "2abde08762a5c5f1",
+        "name": "Delete /resestart music",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1730,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba02b2aa47fad457",
+        "type": "traffic",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Brighten the Lights",
+        "property_allow": "payload",
+        "filter_allow": "start",
+        "ignore_case_allow": false,
+        "negate_allow": false,
+        "send_allow": false,
+        "property_stop": "payload",
+        "filter_stop": "snooze",
+        "ignore_case_stop": false,
+        "negate_stop": false,
+        "send_stop": false,
+        "default_start": false,
+        "differ": false,
+        "x": 1110,
+        "y": 600,
+        "wires": [
+            [
+                "de710702.9a2d98"
+            ]
+        ]
+    },
+    {
+        "id": "4901d6d88a14425c",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "4d717afb23e9b4f0",
+        "name": "Disable wakeup",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.wakeup_enabled_pp",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d8ecbfbed892d2ed",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "d": true,
+        "g": "2abde08762a5c5f1",
+        "name": "Start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1950,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a4a3241034570daa",
+        "type": "server-state-changed",
+        "z": "48c677fd0b35b6c4",
+        "d": true,
+        "g": "2abde08762a5c5f1",
+        "name": "Snooze Off",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.snooze_pp",
+        "entityidfiltertype": "substring",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 1660,
+        "y": 720,
+        "wires": [
+            [
+                "d8ecbfbed892d2ed"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "fdb01ee9df9d1d3b",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 580,
+        "wires": [
+            [
+                "ba02b2aa47fad457"
+            ]
+        ]
+    },
+    {
+        "id": "7a4b8a1cbcb4bd12",
+        "type": "link in",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "",
+        "links": [
+            "9a3472a2a89b3ecb",
+            "2e24ce70cbe3093a"
+        ],
+        "x": 95,
+        "y": 340,
+        "wires": [
+            [
+                "47ca214a.cd1c1"
+            ]
+        ]
+    },
+    {
+        "id": "9a3472a2a89b3ecb",
+        "type": "link out",
+        "z": "48c677fd0b35b6c4",
+        "g": "4d717afb23e9b4f0",
+        "name": "",
+        "links": [
+            "7a4b8a1cbcb4bd12",
+            "f9eeb63e4d6c5efd"
+        ],
+        "x": 395,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "0819f5a44af90e72",
+        "type": "debug",
+        "z": "48c677fd0b35b6c4",
+        "g": "4d717afb23e9b4f0",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "a92dc4d30d797fa2",
+        "type": "server-state-changed",
+        "z": "48c677fd0b35b6c4",
+        "g": "4d717afb23e9b4f0",
+        "name": "Check new alarm",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.s21_ultra_pp_next_alarm",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "10da159012df5787",
+                "0819f5a44af90e72"
+            ]
+        ]
+    },
+    {
+        "id": "60097ff1233862c1",
+        "type": "server-state-changed",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Snooze PP",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.snooze_pp",
+        "entityidfiltertype": "substring",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 660,
+        "y": 660,
+        "wires": [
+            [
+                "9928139de1a200c0"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "9928139de1a200c0",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Stop",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "snooze",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 660,
+        "wires": [
+            [
+                "ba02b2aa47fad457",
+                "d7faa693a010ae50"
+            ]
+        ]
+    },
+    {
+        "id": "d7faa693a010ae50",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "52b7dc168ecf96ba",
+        "name": "Disable wakeup",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.wakeup_enabled_pp",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1120,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b21c3db364c53148",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "96de77322a4a63a2",
+        "name": "check for clock app",
+        "property": "data.new_state.attributes.Package",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "com.sec.android.app.clockpackage",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 220,
+        "y": 880,
+        "wires": [
+            [
+                "15d86a0a277ff7b5"
+            ],
+            [
+                "7c18a79e0937357e"
+            ]
+        ]
+    },
+    {
+        "id": "7c18a79e0937357e",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "96de77322a4a63a2",
+        "name": "Disable wakeup",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.wakeup_enabled_suus",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 700,
+        "y": 840,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6847559701a26c51",
+        "type": "debug",
+        "z": "48c677fd0b35b6c4",
+        "g": "96de77322a4a63a2",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "fc1f0c06669265bb",
+        "type": "server-state-changed",
+        "z": "48c677fd0b35b6c4",
+        "g": "96de77322a4a63a2",
+        "name": "Check new alarm",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "sensor.a50_suus_next_alarm",
+        "entityidfiltertype": "exact",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 1,
+        "output_only_on_state_change": true,
+        "for": 0,
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 140,
+        "y": 780,
+        "wires": [
+            [
+                "b21c3db364c53148",
+                "6847559701a26c51"
+            ]
+        ]
+    },
+    {
+        "id": "f710a07aed115b79",
+        "type": "function",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Get day of week",
+        "func": "var day = new Date().getDay();\n\nvar isWeekend = (day === 6) || (day === 0); \n\nreturn {\n    payload: isWeekend,\n};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 180,
+        "y": 1160,
+        "wires": [
+            [
+                "cb412c972ca2f28e"
+            ]
+        ]
+    },
+    {
+        "id": "cb412c972ca2f28e",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Is it weekend?",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 180,
+        "y": 1200,
+        "wires": [
+            [
+                "1080fcef0487a62e"
+            ],
+            [
+                "e5ca926589c43db7"
+            ]
+        ]
+    },
+    {
+        "id": "1080fcef0487a62e",
+        "type": "api-current-state",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Enabled on weekends?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "off",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.wakeup_weekend_suus",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 450,
+        "y": 1160,
+        "wires": [
+            [
+                "e5ca926589c43db7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e5ca926589c43db7",
+        "type": "api-current-state",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Enabled?",
+        "server": "d9e598cd.b27578",
+        "version": 2,
+        "outputs": 2,
+        "halt_if": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "entity_id": "input_boolean.wakeup_enabled_suus",
+        "state_type": "str",
+        "blockInputOverrides": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entity"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 440,
+        "y": 1220,
+        "wires": [
+            [
+                "8e59eaa177321f30"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "8e59eaa177321f30",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "1%",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.mini_dimmer_6",
+        "data": "{\"brightness\":1}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 650,
+        "y": 1220,
+        "wires": [
+            [
+                "f4d64255d98d9216",
+                "14c98c13c7d88e81"
+            ]
+        ]
+    },
+    {
+        "id": "f4d64255d98d9216",
+        "type": "looptimer",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "duration": "1",
+        "units": "Minute",
+        "maxloops": "30",
+        "maxtimeout": "35",
+        "maxtimeoutunits": "Minute",
+        "name": "",
+        "x": 840,
+        "y": 1160,
+        "wires": [
+            [
+                "9159c25433f26a83"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f587b0f0fee3ea1d",
+        "type": "api-render-template",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Get new light setting",
+        "server": "d9e598cd.b27578",
+        "version": 0,
+        "template": "{{ [250, state_attr('light.mini_dimmer_6', 'brightness') + 9] | min }}",
+        "resultsLocation": "payload",
+        "resultsLocationType": "msg",
+        "templateLocation": "template",
+        "templateLocationType": "msg",
+        "x": 1140,
+        "y": 1220,
+        "wires": [
+            [
+                "142d6f3e895f8ec7"
+            ]
+        ]
+    },
+    {
+        "id": "142d6f3e895f8ec7",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Increase light",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "light",
+        "service": "turn_on",
+        "entityId": "light.mini_dimmer_6",
+        "data": "{\"brightness_step_pct\":\"2\"}",
+        "dataType": "jsonata",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "data"
+            }
+        ],
+        "queue": "none",
+        "x": 1140,
+        "y": 1120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ed143c7abf0d3f2",
+        "type": "function",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Parse time",
+        "func": "new_msg = {\n    payload: {\n        ontime: msg.data.new_state.attributes[\"Local Time\"].substr(11,15),\n        offtime: msg.data.new_state.attributes[\"Local Time\"].substr(11,15)\n    }\n}\nreturn new_msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 1040,
+        "wires": [
+            [
+                "0cd4dcaa2bd76b94"
+            ]
+        ]
+    },
+    {
+        "id": "0cd4dcaa2bd76b94",
+        "type": "schedex",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Trigger at time",
+        "passthroughunhandled": false,
+        "suspended": false,
+        "lat": "51.709779",
+        "lon": "5.365246",
+        "ontime": "7:00",
+        "ontopic": "",
+        "onpayload": "on",
+        "onoffset": "-30",
+        "onrandomoffset": 0,
+        "offtime": "07:45",
+        "offtopic": "",
+        "offpayload": "off",
+        "offoffset": "60",
+        "offrandomoffset": 0,
+        "mon": true,
+        "tue": true,
+        "wed": true,
+        "thu": true,
+        "fri": true,
+        "sat": true,
+        "sun": true,
+        "x": 440,
+        "y": 1040,
+        "wires": [
+            [
+                "558d10efeadf7d61"
+            ]
+        ]
+    },
+    {
+        "id": "558d10efeadf7d61",
+        "type": "switch",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "is on",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 630,
+        "y": 1040,
+        "wires": [
+            [
+                "f710a07aed115b79"
+            ]
+        ]
+    },
+    {
+        "id": "b457554111bab002",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Time setting input",
+        "info": "",
+        "x": 150,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "6b7cc4997fda0ad9",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Trigger at the configured time",
+        "info": "",
+        "x": 500,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "403ed98dcda5e7cd",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Check if the wake-up light should be enabled on this day of the week",
+        "info": "",
+        "x": 310,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "70677c717173b66a",
+        "type": "comment",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Run the wake-up sequence",
+        "info": "",
+        "x": 840,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "9159c25433f26a83",
+        "type": "traffic",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Brighten the Lights",
+        "property_allow": "payload",
+        "filter_allow": "start",
+        "ignore_case_allow": false,
+        "negate_allow": false,
+        "send_allow": false,
+        "property_stop": "payload",
+        "filter_stop": "snooze",
+        "ignore_case_stop": false,
+        "negate_stop": false,
+        "send_stop": false,
+        "default_start": false,
+        "differ": false,
+        "x": 1110,
+        "y": 1300,
+        "wires": [
+            [
+                "f587b0f0fee3ea1d"
+            ]
+        ]
+    },
+    {
+        "id": "14c98c13c7d88e81",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Start",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "start",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 1280,
+        "wires": [
+            [
+                "9159c25433f26a83"
+            ]
+        ]
+    },
+    {
+        "id": "467fcf9aa0fa6f05",
+        "type": "server-state-changed",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Snooze Suus",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "exposeToHomeAssistant": false,
+        "haConfig": [
+            {
+                "property": "name",
+                "value": ""
+            },
+            {
+                "property": "icon",
+                "value": ""
+            }
+        ],
+        "entityidfilter": "input_boolean.snooze_suus",
+        "entityidfiltertype": "substring",
+        "outputinitially": false,
+        "state_type": "str",
+        "haltifstate": "on",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "outputs": 2,
+        "output_only_on_state_change": false,
+        "for": "0",
+        "forType": "num",
+        "forUnits": "minutes",
+        "ignorePrevStateNull": false,
+        "ignorePrevStateUnknown": false,
+        "ignorePrevStateUnavailable": false,
+        "ignoreCurrentStateUnknown": false,
+        "ignoreCurrentStateUnavailable": false,
+        "outputProperties": [
+            {
+                "property": "payload",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "entityState"
+            },
+            {
+                "property": "data",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "eventData"
+            },
+            {
+                "property": "topic",
+                "propertyType": "msg",
+                "value": "",
+                "valueType": "triggerId"
+            }
+        ],
+        "x": 670,
+        "y": 1360,
+        "wires": [
+            [
+                "f3c377a9e21fea52"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "f3c377a9e21fea52",
+        "type": "change",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Stop",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "snooze",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
+        "y": 1360,
+        "wires": [
+            [
+                "9159c25433f26a83",
+                "435c29fa1b4e05c8"
+            ]
+        ]
+    },
+    {
+        "id": "435c29fa1b4e05c8",
+        "type": "api-call-service",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "Disable wakeup",
+        "server": "d9e598cd.b27578",
+        "version": 3,
+        "debugenabled": false,
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "entityId": "input_boolean.wakeup_enabled_suus",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "mustacheAltTags": false,
+        "outputProperties": [],
+        "queue": "none",
+        "x": 1120,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f65351a4e0c40bb1",
+        "type": "link in",
+        "z": "48c677fd0b35b6c4",
+        "g": "20c296ee70adad6b",
+        "name": "",
+        "links": [
+            "15d86a0a277ff7b5"
+        ],
+        "x": 115,
+        "y": 1040,
+        "wires": [
+            [
+                "1ed143c7abf0d3f2"
+            ]
+        ]
+    },
+    {
+        "id": "15d86a0a277ff7b5",
+        "type": "link out",
+        "z": "48c677fd0b35b6c4",
+        "g": "96de77322a4a63a2",
+        "name": "",
+        "links": [
+            "f65351a4e0c40bb1"
+        ],
+        "x": 395,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "d9e598cd.b27578",
+        "type": "server",
+        "name": "Home Assistant default",
+        "version": 1,
+        "legacy": false,
+        "addon": true,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
