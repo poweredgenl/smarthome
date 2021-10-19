@@ -1,12 +1,14 @@
-# Peter-Paul's smarthome project
+# H17 Smarthome project
 
 ## Intro
 
 This repository contains all information and scripts (as much as possible) on my smarthome projects. As im working with Red Hat, i want to honor the open source way of working to share my automations and setup. Things i wont share are specifics around the alarm system and security setup.
 
+H17 refers to the street and housename ... so theres the history in that. Im living with a son and my wife in the Netherlands.
+
 ## Platform overview
 
-For my smarthome setup i use the follow components.
+For our smarthome setup we use the follow components.
 
 ### Basics
 
@@ -18,7 +20,7 @@ For my smarthome setup i use the follow components.
 
 ### Hardware platform
 
-There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other servers.
+There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
 - Synology DS920+ (4x 3TiB)
@@ -59,6 +61,14 @@ There are multiple options for running the above components, commonly a Raspberr
 - pfSense UPNP
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
+
+## Dashboard
+
+I run one of the raspberry PI's with a industrial touchscrene, which is seamless mounted on the wall. Cabling runs thru the walls to the PI so i have the best possible/cleaned setup. THe system boots with autostart on chromium in kiosk mode. I edited /etc/xdg/lxsession/LXDE-pi/autostart for this.
+
+I added: /usr/bin/chromium-browser --kiosk --disable-restore-session-state --disable-component-update http://HASSIP:8123/DASHBOARD-NAME/default_view?hide_sidebar=
+
+I instelled via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
 
 ## Automations
 
