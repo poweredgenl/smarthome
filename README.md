@@ -73,10 +73,12 @@ There are multiple options for running the above components, commonly a Raspberr
 - Sensor.community (Luftdaten)
 - MQTT
 - Google Nest
+- Kodi
 - Network UPS tools
 - Node-red
 - Opentherm Gateway
-- Philips HUe
+- Philips Hue
+- Philips Android TV
 - RFXcom 433mhz
 - Shelly
 - Spotify
@@ -85,6 +87,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - pfSense UPNP
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
+- Tasmoto
 
 ## Dashboard
 
@@ -140,6 +143,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 ## Other automations
 
 - Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the radiator at a very low temperature level. (14 degrees celcius)
+- Kodi integration with Philips Hue + Philips Ambilight - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the movie.
 
 ## Todo
 
