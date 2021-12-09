@@ -65,6 +65,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Buienradar (weather forecast the Netherlands)
 - CO2 Signal
 - DSMR reader
+- Elgato Key light (2 in studio)
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - Grocy
