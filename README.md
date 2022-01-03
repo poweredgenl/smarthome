@@ -132,6 +132,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Good night: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
 - Where is who?: based on the frigate information, i can ask " where is Peter-Paul "  which then voices back the last know home location, or, if im away or my wife is not at home, i will lookup the external location and mention this.
 - Battery check: every day at 1200, the system will check the battery of the sensors in the house and will mention if a sensor is below 15% via a message on telegram.
+- Zwave dead node check: every day at 1200, the system will check if a zwave node has the 'dead' status. HASS will notify me via telegram if this is the case and which node is dead (and i have to check).
 - Kitchen check: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the fridge is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
 - Garden: we hate cats in the garden because it keeps the birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this as well via TTS so we can jump to the garden to chase it away.
 - Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
