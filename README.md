@@ -6,7 +6,7 @@ This repository contains all information and scripts (as much as possible) on my
 
 H17 refers to the street and housename ... so theres the history in that. Im living with a son and my wife in the Netherlands.
 
-If you like the guide and information here, [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Peterpaul "Buy Me A Coffee")
+If you like the guide and information [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Peterpaul "Buy Me A Coffee")
 
 ## Platform overview
 
