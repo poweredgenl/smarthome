@@ -43,9 +43,9 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
 - Synology DS920+ (4x 3TiB)
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, etc)
-- Vivotek / Foscam POE cameras.
+- 4x Vivotek / 2x Foscam POE cameras.
 - Google Coral TPU
-- APC Backup UPS x2
+- 2x APC Backup UPS 
 - 2x Raspberry PI 4b + POE HATs
 - 23" Industrial touchscreen / bezelless for the home dashboard on PI #1
 - P1 cable / reader on PI #2
@@ -79,7 +79,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Kodi
 - Network UPS tools
 - Node-red
-- Opentherm Gateway
+- Opentherm Gateway with NodeMCU: https://github.com/rvdbreemen/OTGW-firmware
 - Philips Hue
 - Philips Android TV
 - RFXcom 433mhz
@@ -128,6 +128,8 @@ All automations below are the ones i have implemented in my home. Those not rela
 
 I wanted to maximize the way the house is reponsive in voice and notifications as well. so i linked telegram and alexa tts to specific events or information i want to know. THe family can then ask to the house via the [wakeword]alexa " whats the house status "  for example whici is returned via TTS and flows who get the actual sensor state values.
 
+## House status information / automations
+
 - House status: responds the amount of power usage and the remaining runtimes on the UPS batteries
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
 - Goodmorning: responds " good morning " (duh) but also mentions if the last nights backup has failed and hasnt uploaded.
@@ -143,6 +145,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Alarm system: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to telegram / sms and creates photos in the process. This flow i wont share ...
 - Washing machine + dryer: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
 - Smoke detection: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
+- With Opentherm Gateway and sensors, the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other faults are detected.
 
 ## Other automations
 
