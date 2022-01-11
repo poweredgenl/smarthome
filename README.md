@@ -83,6 +83,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Philips Hue
 - Philips Android TV
 - RFXcom 433mhz
+- Resmed MyAir - sleep apnea device which i use. (read out my sleeping health)
 - Shelly
 - Spotify
 - Synology
