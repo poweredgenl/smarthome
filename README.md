@@ -100,6 +100,12 @@ I added: /usr/bin/chromium-browser --kiosk --disable-restore-session-state --dis
 
 I installed via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
 
+I use also the 3d version of my home, created based on https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/ as an interactive panel on the homescreen. 
+
+<p align="center">
+  <img src="https://i.imgur.com/VnICZaC.png" />
+</p>
+
 ## Automations
 
 All automations below are the ones i have implemented in my home. Those not related to security are uploaded as well.
