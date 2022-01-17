@@ -145,7 +145,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Battery check: every day at 1200, the system will check the battery of the sensors in the house and will mention if a sensor is below 15% via a message on telegram.
 - Zwave dead node check: every day at 1200, the system will check if a zwave node has the 'dead' status. HASS will notify me via telegram if this is the case and which node is dead (and i have to check).
 - Kitchen check: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the fridge is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
-- Garden: we hate cats in the garden because it keeps the birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this as well via TTS so we can jump to the garden to chase it away.
+- Garden: we hate cats in the garden whom are keeping  birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this as well via TTS so we can sprint to the garden and chase it away.
 - Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
 - Door trigger: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
 - Door welcome message: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
@@ -153,6 +153,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Washing machine + dryer: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
 - Smoke detection: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 - With Opentherm Gateway and sensors, the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other faults are detected.
+- Morning alarm/wake up light link: you can use the integrated sensor of your phone (next_alarm) as an entity in an automation. Philips has nice wakeup lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
 
 ## Other automations
 
