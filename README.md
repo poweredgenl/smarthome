@@ -139,7 +139,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 
 - House status: responds the amount of power usage and the remaining runtimes on the UPS batteries
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
-- Goodmorning: responds " good morning " (duh) but also mentions if the last nights backup has failed and hasnt uploaded.
+- Goodmorning: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
 - Good night: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
 - Where is who?: based on the frigate information, i can ask " where is Peter-Paul "  which then voices back the last know home location, or, if im away or my wife is not at home, i will lookup the external location and mention this.
 - Battery check: every day at 1200, the system will check the battery of the sensors in the house and will mention if a sensor is below 15% via a message on telegram.
