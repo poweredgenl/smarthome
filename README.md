@@ -154,6 +154,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Smoke detection: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 - With Opentherm Gateway and sensors, the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other faults are detected.
 - Morning alarm/wake up light link: you can use the integrated sensor of your phone (next_alarm) as an entity in an automation. Philips has nice wakeup lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
+- Flood sensor: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water detected.
 
 ## Other automations
 
