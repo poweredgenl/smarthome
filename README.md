@@ -75,6 +75,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Siemens Home Connect
 - Sensor.community (Luftdaten)
 - MQTT
+- Mac Home Assistant companion - to integrate my macbook sensors in HA to do cool automations
 - Google Nest
 - Kodi
 - Network UPS tools
@@ -109,13 +110,13 @@ I use also the 3d version of my home, created based on https://aarongodfrey.dev/
 
 ## Automations
 
-All automations below are the ones i have implemented in my home. Those not related to security are uploaded as well.
+### Generic automations 
 
-- Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
+Below are the ones i have implemented in my home. Those not related to security are uploaded as well.
+
 - Realtime person tracking via Frigate NVR and Doubletake (check out https://github.com/jakowenko/double-take)
 - Home build wake up lights - Philips style - with Hue Bulbs and the HASS "next_alarm" sensor.
-- Bathroom humidity control with a standard HASS automation (lazy to migrate it to Node-Red)
-- Home Notfication system with Telegram and Alexa TTS (see section below on notifications/status requests)
+- Bathroom fan - when humidity is above a certain level.
 - Alarm system with sensors
 - Power monitoring everything / plugs / dimmers etc.
    - DSMR is reading the central p1 power monitor and gathers this in the HASS energy dashboard.
@@ -130,12 +131,14 @@ All automations below are the ones i have implemented in my home. Those not rela
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
 - In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere.
+- Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
+- When the webcam (sony a5100 via camlink 4k on USB) of my macbook is ' on ', it triggers the automation to turn on the studio lights (elgato key lights)
 
-### Home notification system
+## House status
+
+### Notification system automations
 
 I wanted to maximize the way the house is reponsive in voice and notifications as well. so i linked telegram and alexa tts to specific events or information i want to know. THe family can then ask to the house via the [wakeword]alexa " whats the house status "  for example whici is returned via TTS and flows who get the actual sensor state values.
-
-## House status information / automations
 
 - House status: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also reports the current central heating pressure in the system (in bar).
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
