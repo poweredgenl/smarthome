@@ -137,7 +137,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 
 ## House status information / automations
 
-- House status: responds the amount of power usage and the remaining runtimes on the UPS batteries
+- House status: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also reports the current central heating pressure in the system (in bar).
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
 - Goodmorning: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
 - Good night: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
