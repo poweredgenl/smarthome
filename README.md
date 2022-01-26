@@ -12,7 +12,7 @@ If you like the guide and information [![Buy Me A Coffee](https://www.buymeacoff
 
 I have a generic virtualized platform which runs a multitude of servers.
 
-- firewall, domain controller, monitoring, docker hosts, steppingstones. 
+- firewall, domain controller, monitoring, docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
 
 For our smarthome setup we use the follow components.
 
