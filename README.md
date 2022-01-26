@@ -130,9 +130,17 @@ Below are the ones i have implemented in my home. Those not related to security 
 ### Light automations
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
-- In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere.
+- In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected       anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere.
 - Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
-- When the webcam (sony a5100 via camlink 4k on USB) of my macbook is ' on ', it triggers the automation to turn on the studio lights (elgato key lights)
+
+### Office / streaming 
+
+I regularly record videos for LinkedIn and using this setup also in my video calls with customers... so i automated a few things.
+
+- When the camera (sony a5100 via camlink 4k on USB) of my macbook is ' on ', it triggers the automation to turn on the studio lights (elgato key lights)
+- When i activate via my streamdeck the 'presenter mode' it:
+  - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
+
 
 ## House status
 
