@@ -26,6 +26,7 @@ HASS virtual machnine
 - Wifi / MQTT modules
   - Shelly 2.5 etc.
 - Node-RED for automation flows
+- RFX 433Mhz transmitter (doorbell / covers)
 
 Docker virtual machine
 - Compreface (AI/ML vision API)
