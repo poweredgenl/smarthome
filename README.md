@@ -62,6 +62,7 @@ There are multiple options for running the above components, commonly a Raspberr
 ### Integrations in Home-Assistant enabled
 
 - Amazon Alexa
+- Android TV Notifications
 - Auto backup 
 - BMW Connected drive
 - Broadink
@@ -175,11 +176,12 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the radiator at a very low temperature level. (14 degrees celcius)
 - Kodi integration with Philips Hue + Philips Ambilight - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the movie.
 
-## Todo
+## Todo / building / iterating
 
 - Garden irrigation / anti-cat: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
 - Out of bed lights: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - Grocy / Groceries inventory management: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet. WIP untill i find something to monitor.
+- Alexa actionable notifications - https://github.com/keatontaylor/alexa-actions/wiki
 
 ## Community ideas?
 
