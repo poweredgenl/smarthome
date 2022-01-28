@@ -113,6 +113,14 @@ I use also the 3d version of my home, created based on https://aarongodfrey.dev/
   <img src="https://i.imgur.com/VnICZaC.png" />
 </p>
 
+Next to the sensors which are displayed in the 3d image of each floor - i made a specific item with conditions which displays also the live location (last known) based on the ML model (see frigate)... on where i or my wife is last ' seen '. An example you can see below:
+
+<p align="center">
+  <img src="https://i.imgur.com/LfwS9D0.png" />
+</p>
+
+For this u i used the condigtional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). The code for this is in my repo.
+
 ## Automations
 
 ### Generic automations 
