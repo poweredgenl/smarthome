@@ -20,11 +20,12 @@ For our smarthome setup we use the follow components.
 
 HASS virtual machnine
 - Home Assistant Supervised on Debian (yes i know ... not Red Hat ... yet)
-- Z-zwave via AEOTEC gen5 stick
+- Z-zwave via AEOTEC gen5 stick (+/- 50 devices)
   - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
-- Zigbee via/with Philips Hue bridge
+- Zigbee via/with Philips Hue system (+/- 20 devices)
 - Wifi / MQTT modules
-  - Shelly 2.5 etc.
+  - Shelly 2.5 (3x)
+  - NodeMU (2x)
 - Node-RED for automation flows
 - RFX 433Mhz transmitter (doorbell / covers)
 
@@ -35,6 +36,8 @@ Docker virtual machine
 - Monocle cam
 - Double-take (see below)
 - Deepstack (testing)
+
+Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
 
 ### Hardware platform
@@ -149,7 +152,7 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 
 ### Notification system automations
 
-I wanted to maximize the way the house is reponsive in voice and notifications as well. so i linked telegram and alexa tts to specific events or information i want to know. THe family can then ask to the house via the [wakeword]alexa " whats the house status "  for example whici is returned via TTS and flows who get the actual sensor state values.
+I wanted to maximize the way the house is reponsive in voice and notifications as well. so i linked telegram and alexa tts to specific events or information i want to know. The family can then ask to the house via the [wakeword]alexa " whats the house status "  for example which is returned via TTS and flows who get the actual sensor state values.
 
 - House status: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
@@ -171,6 +174,16 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 - Flood sensor: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water         detected.
 - Particle density: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
 - BMW fuel remaining: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
+
+ALso i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
+
+For example, you can ask Alexa the location of the following items (list limited - expanding as i go along)
+
+- Batteries, wine glasses, cutlery, plates, herbs, paint, tape, toilet paper, tea, coffee, candles, soup, medicines, etc.
+
+On the ' how to do what ' side, i created input for, how to do:
+
+- Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
 ## Other automations
 
