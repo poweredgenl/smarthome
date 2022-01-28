@@ -119,7 +119,7 @@ Next to the sensors which are displayed in the 3d image of each floor - i made a
   <img src="https://i.imgur.com/LfwS9D0.png" />
 </p>
 
-For this u i used the condigtional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). The code for this is in my repo.
+For this i used the conditional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). 
 
 ## Automations
 
