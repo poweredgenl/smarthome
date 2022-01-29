@@ -103,7 +103,7 @@ To have a proper overview of the house, and to control everything i have wall mo
 I added: `/usr/bin/chromium-browser --kiosk --disable-restore-session-state --disable-component-update http://HASSIP:8123/DASHBOARD-NAME/default_view?hide_sidebar=` as script. I installed via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
 
 <p align="center">
-  <img src="https://i.imgur.com/XDkNqdP.jpeg" />
+  <img src="https://i.imgur.com/Nt3B9lf.jpg" />
   <img src="https://i.imgur.com/b6DuBSm.png" />
 </p> 
 
