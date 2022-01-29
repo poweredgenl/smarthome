@@ -28,7 +28,9 @@ If you like the guide and information
     - [Other automations](#otherautomations)
   - [House status](#housestatus)
     - [Notification system](#notifications)
+  - [Specific implementations](#specific)
   - [ToDo / Work in progress](#wip)
+- [Your ideas?](#ideas)
 
 ## Platform overview <a name="overview"/>
 
@@ -46,10 +48,10 @@ HASS virtual machine
   - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
 - Philips Hue  (+/- 20 devices)
 - Wifi / MQTT modules
-  - Shelly 2.5 (3x)
+  - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
 - Node-RED for automation flows
-- RFX 433Mhz transmitter (doorbell / covers)
+- RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
 
 Later in this readme all the integrations i have enabled in Home Assistant.
 
@@ -86,7 +88,6 @@ Small overview of the main equipment running the house. Rack consumes approx 250
 
 #### Librenms monitoring <a name="monitoring"/>
 
-For monitoring every hardware equipment in the house i use  `LibreNMS`. Librenms has  a link with telegram (like HA as well), which sents out alerts in case something is wrong. I also use  Smokeping https://oss.oetiker.ch/smokeping/ to monitor more in depth ping / latency etc.
 
 <p align="center">
   <img src="https://i.imgur.com/wxoAMT0.png" />  
@@ -252,6 +253,14 @@ On the ' how to do what ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
+### Specific implementations <a name="specific"/>
+
+- RFXcom433 with Somfy RTS:
+  I had to do some fiddeling with the RXcom to get my Somfy RTS blinds working (telis 1 remote). For this i used a number of sites but in general the approach is   this:
+  
+  Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
+  Step 2: When programmed - i took note of the " id " via rfxmgr and used it to MANUALLY! add it via "integrations -> add device" ... ive taken the ID from this   website: https://community.home-assistant.io/t/problem-controlling-somfy-blinds-via-rfxtrx/61975. so for example `071a000001010101` ...replace the last 010101       with the ID which your programmed it with via RFXmgr.
+
 ## ToDo & Work in progress <a name="wip"/>
 
 - Garden irrigation / anti-cat: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water the     plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
@@ -259,6 +268,6 @@ On the ' how to do what ' side, i created input for, how to do:
 - Grocy / Groceries inventory management: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet. WIP   untill i find something to monitor.
 - Alexa actionable notifications - https://github.com/keatontaylor/alexa-actions/wiki
 
-## Community ideas?
+## Community ideas? <a name="ideas"/>
 
 Do you have ideas which i didnt have thought about ? Perhaps you can suggest them so i can build them as well.
