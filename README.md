@@ -10,35 +10,33 @@ If you like the guide and information [![Buy Me A Coffee](https://www.buymeacoff
 
 ## Platform overview
 
-I have a generic virtualized platform which runs a multitude of servers.
+I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
-- firewall, domain controller, monitoring, docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
-
-For our smarthome setup we use the follow components.
-
-### Basics
-
-HASS virtual machnine
-- Home Assistant Supervised on Debian (yes i know ... not Red Hat ... yet)
-- Z-zwave via AEOTEC gen5 stick (+/- 50 devices)
-  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
-- Zigbee via/with Philips Hue system (+/- 20 devices)
-- Wifi / MQTT modules
-  - Shelly 2.5 (3x)
-  - NodeMU (2x)
-- Node-RED for automation flows
-- RFX 433Mhz transmitter (doorbell / covers)
-
-Docker virtual machine
-- Compreface (AI/ML vision API)
-- DSMR readers
-- Portainer
-- Monocle cam
-- Double-take (see below)
-- Deepstack (testing)
+- firewall (pfSense), domain controller (users/auth/windows based systems), monitoring (LibreNMS), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
+### Smarthome Basic overview
+
+HASS virtual machine
+- Home Assistant Supervised
+- Z-zwave via AEOTEC gen5 stick (+/- 50 devices)
+  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
+- Philips Hue  (+/- 20 devices)
+- Wifi / MQTT modules
+  - Shelly 2.5 (3x)
+  - NodeMCU (2x)
+- Node-RED for automation flows
+- RFX 433Mhz transmitter (doorbell / covers)
+
+Later in this readme all the integrations i have enabled in Home Assistant.
+
+Docker virtual machine for secondary / specific tasks
+- Compreface (AI/ML vision API)
+- DSMR reader
+- Portainer
+- Monocle cam (translates local cameras on synology into RTSP streams the Echo devices can see/view)
+- Double-take (intermediate software which bridges between Frigate and Compreface)
 
 ### Hardware platform
 
@@ -50,17 +48,29 @@ There are multiple options for running the above components, commonly a Raspberr
 - 4x Vivotek / 2x Foscam POE cameras.
 - Google Coral TPU
 - 2x APC Backup UPS 
-- 2x Raspberry PI 4b + POE HATs
-- 23" Industrial touchscreen / bezelless for the home dashboard on PI #1
+- 2x Raspberry PI 4b + POE HAT (for P1/Rfxcom, and one for the Home Dashboard - see below))
+- 23" Industrial touchscreen 
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
 
+#### Server rack in storage room
+
+Small overview of the main equipment running the house. Rack consumes approx 250 watt 24/7 (which i think is quite reasonable).
 
 <p align="center">
-  <img src="https://i.imgur.com/XDkNqdP.jpeg" />
   <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
   <img src="https://tweakers.net/i/BnynUxD0-xjVEEZ8QYtpUjkWuh8=/x800/filters:strip_icc():strip_exif()/f/image/MQInl94P9KkwBdvsHLK8Ryuj.jpg?f=fotoalbum_large" />
 </p>
+
+### Home dashboard
+
+To have a proper overview of the house, and to control everything i have wall mounted touchscreen, with cables running in the walls, and a RPI which is located in a secret compartiment. The screen turns on when you touch it, and will auto-off after 5 min of not beeing used.
+
+<p align="center">
+  <img src="https://i.imgur.com/XDkNqdP.jpeg" />
+  <img src="https://i.imgur.com/b6DuBSm.png" />
+</p> 
+
 
 ### Integrations in Home-Assistant enabled
 
