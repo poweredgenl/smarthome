@@ -121,6 +121,9 @@ Next to the sensors which are displayed in the 3d image of each floor - i made a
 
 For this i used the conditional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). 
 
+#### Cards used
+
+- Picture elements, entities, custom neerslag, buienradar, horizontal and vertical stacks, pictures, customer thermonstat/dark thermostat
 
 ### HA Integrations enabled <a name="integrations"/>
 
