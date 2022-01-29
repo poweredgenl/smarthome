@@ -146,6 +146,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - MQTT
 - Mac Home Assistant companion - to integrate my macbook sensors in HA to do cool automations
 - Google Nest
+- Google Cast
 - Kodi
 - Network UPS tools
 - Node-red
