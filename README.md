@@ -18,6 +18,17 @@ If you like the guide and information
     - [Servers](#servers)
     - [Monitoring](#monitoring)
 - [Home Assistant](#hass)
+  - [Dashboard](#dashboard)
+  - [HA integrations](#integrations)
+  - [Automations](#automations)
+    - [Overview](#genericautomations)
+    - [Realtime video tracking](#videotracking)
+    - [Lights](#lightautomations)
+    - [Office & streaming](#officeautomations)
+    - [Other automations](#otherautomations)
+  - [House status](#housestatus)
+    - [Notification system](#notifications)
+  - [ToDo / Work in progress](#wip)
 
 ## Platform overview <a name="overview"/>
 
@@ -84,7 +95,7 @@ For monitoring every hardware equipment in the house i use  `LibreNMS`. Librenms
 
 ## Home Assistant <a name="hass"/>
 
-### Dashboard
+### Dashboard <a name="dashboard"/>
 
 
 To have a proper overview of the house, and to control everything i have wall mounted touchscreen, with cables running in the walls, and a RPI which is located in a secret compartiment. The screen turns on when you touch it, and will auto-off after 5 min of not beeing used. The system boots with autostart on chromium in kiosk mode. I edited `/etc/xdg/lxsession/LXDE-pi/autostart` for this.
@@ -111,7 +122,7 @@ Next to the sensors which are displayed in the 3d image of each floor - i made a
 For this i used the conditional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). 
 
 
-### HA Integrations enabled
+### HA Integrations enabled <a name="integrations"/>
 
 - Amazon Alexa
 - Android TV Notifications
@@ -148,13 +159,12 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Telegram notification service
 - Tasmoto
 
-## Automations
+### Automations <a name="automations"/>
 
-### Generic automations 
+#### Overview  <a name="genericautomations"/>
 
 Below are the ones i have implemented in my home. Those not related to security are uploaded as well.
 
-- Realtime person tracking via Frigate NVR and Doubletake (check out https://github.com/jakowenko/double-take)
 - Home build wake up lights - Philips style - with Hue Bulbs and the HASS "next_alarm" sensor.
 - Bathroom fan - when humidity is above a certain level.
 - Alarm system with sensors
@@ -163,17 +173,17 @@ Below are the ones i have implemented in my home. Those not related to security 
 - The upstairs thermostats are joined in a climate group so i can control them as a whole floor. (eurotronic spirit zwave)
 - Nightly the HASS and frigate/AI-ML setup is backupped and transferred 1 locally to the drive 2 copied to the NAS 3 synced with a cloud storage provider. (using   the 3 2 1 method for backups)
 
-### Frigate / Synology surveillance tracking
+#### Realtime video analysis with ML <a name="videotracking"/>
 
-- Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface
+- Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface. (check out https://github.com/jakowenko/double-take)
 
-### Light automations
+#### Light automations <a name="lightautomations"/>
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
 - In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected       anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere.
 - Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
 
-### Office / streaming 
+#### Office / streaming <a name="officeautomations"/>
 
 I regularly record videos for LinkedIn and using this setup also in my video calls with customers... so i automated a few things.
 
@@ -182,12 +192,16 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
   - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
 - Piano mode: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
 
+#### Other automations <a name="otherautomations"/>
 
-## House status
+- Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
+- Kodi integration with Philips Hue + Philips Ambilight - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
 
-### Notification system automations
+### House status <a name="housestatus"/>
 
 I wanted to maximize the way the house is reponsive in voice and notifications as well. so i linked telegram and alexa tts to specific events or information i want to know. The family can then ask to the house via the [wakeword]alexa " whats the house status "  for example which is returned via TTS and flows who get the actual sensor state values.
+
+#### Notification system <a name="notifications"/>
 
 - House status: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
 - Open Windows: responds / checks which windows are open and responds which are open and need to be closed
@@ -235,12 +249,7 @@ On the ' how to do what ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
-## Other automations
-
-- Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
-- Kodi integration with Philips Hue + Philips Ambilight - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
-
-## Todo / building / iterating
+## ToDo & Work in progress <a name="wip"/>
 
 - Garden irrigation / anti-cat: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water the     plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
 - Out of bed lights: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
