@@ -12,8 +12,9 @@ If you like the guide and information
 
 ### Table of contents
 
-[Platform overview](#overview)  
-[Home Assistant](#hass)
+- [Platform overview](#overview)
+ - [The basics](#overview)  
+- [Home Assistant](#hass)
 
 ## Platform overview <a name="overview"/>
 
@@ -23,7 +24,7 @@ I have a generic virtualized platform which runs multiple servers, all in servic
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
-### Smarthome Basic overview
+### The basics <a name="basics"/>
 
 HASS virtual machine
 - Home Assistant Supervised
