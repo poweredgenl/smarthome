@@ -62,17 +62,39 @@ Small overview of the main equipment running the house. Rack consumes approx 250
   <img src="https://tweakers.net/i/BnynUxD0-xjVEEZ8QYtpUjkWuh8=/x800/filters:strip_icc():strip_exif()/f/image/MQInl94P9KkwBdvsHLK8Ryuj.jpg?f=fotoalbum_large" />
 </p>
 
-### Home dashboard
+## Home Assistant overview
 
-To have a proper overview of the house, and to control everything i have wall mounted touchscreen, with cables running in the walls, and a RPI which is located in a secret compartiment. The screen turns on when you touch it, and will auto-off after 5 min of not beeing used.
+## Dashboard
+
+I run one of the raspberry PI's with a industrial touchscrene, which is seamless mounted on the wall. Cabling runs thru the walls to the PI so i have the best possible/cleaned setup. THe system boots with autostart on chromium in kiosk mode. I edited /etc/xdg/lxsession/LXDE-pi/autostart for this.
 
 <p align="center">
   <img src="https://i.imgur.com/XDkNqdP.jpeg" />
   <img src="https://i.imgur.com/b6DuBSm.png" />
 </p> 
 
+I added: /usr/bin/chromium-browser --kiosk --disable-restore-session-state --disable-component-update http://HASSIP:8123/DASHBOARD-NAME/default_view?hide_sidebar=
 
-### Integrations in Home-Assistant enabled
+I installed via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
+
+I use also the 3d version of my home, created based on https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/ as an interactive panel on the homescreen. 
+
+<p align="center">
+  <img src="https://i.imgur.com/VnICZaC.png" />
+</p>
+
+Next to the sensors which are displayed in the 3d image of each floor - i made a specific item with conditions which displays also the live location (last known) based on the ML model (see frigate)... on where i or my wife is last ' seen '. An example you can see below:
+
+<p align="center">
+  <img src="https://i.imgur.com/LfwS9D0.png" />
+</p>
+
+For this i used the conditional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). 
+
+
+To have a proper overview of the house, and to control everything i have wall mounted touchscreen, with cables running in the walls, and a RPI which is located in a secret compartiment. The screen turns on when you touch it, and will auto-off after 5 min of not beeing used.
+
+### Integrations in enabled
 
 - Amazon Alexa
 - Android TV Notifications
@@ -108,28 +130,6 @@ To have a proper overview of the house, and to control everything i have wall mo
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
 - Tasmoto
-
-## Dashboard
-
-I run one of the raspberry PI's with a industrial touchscrene, which is seamless mounted on the wall. Cabling runs thru the walls to the PI so i have the best possible/cleaned setup. THe system boots with autostart on chromium in kiosk mode. I edited /etc/xdg/lxsession/LXDE-pi/autostart for this.
-
-I added: /usr/bin/chromium-browser --kiosk --disable-restore-session-state --disable-component-update http://HASSIP:8123/DASHBOARD-NAME/default_view?hide_sidebar=
-
-I installed via HACS the kiosk card, which helps hiding the sidebar which i dont want to visualize.
-
-I use also the 3d version of my home, created based on https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/ as an interactive panel on the homescreen. 
-
-<p align="center">
-  <img src="https://i.imgur.com/VnICZaC.png" />
-</p>
-
-Next to the sensors which are displayed in the 3d image of each floor - i made a specific item with conditions which displays also the live location (last known) based on the ML model (see frigate)... on where i or my wife is last ' seen '. An example you can see below:
-
-<p align="center">
-  <img src="https://i.imgur.com/LfwS9D0.png" />
-</p>
-
-For this i used the conditional element of https://www.home-assistant.io/lovelace/picture-elements/#conditional-element to put in a picture in place of the location (so i defined a set of me and my wife for every room where detection is possible, 5 in my case). 
 
 ## Automations
 
