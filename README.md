@@ -15,8 +15,8 @@ If you like the guide and information
 - [Platform overview](#overview)
   - [The basics](#basics)
   - [Hardware](#hardware)
-   - [Servers](#servers)
-   - [Monitoring](#monitoring)
+    - [Servers](#servers)
+    - [Monitoring](#monitoring)
 - [Home Assistant](#hass)
 
 ## Platform overview <a name="overview"/>
