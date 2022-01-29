@@ -6,9 +6,16 @@ This repository contains all information and scripts (as much as possible) on my
 
 H17 refers to the street and housename ... so theres the history in that. Im living with a son and my wife in the Netherlands.
 
-If you like the guide and information [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Peterpaul "Buy Me A Coffee")
+If you like the guide and information 
 
-## Platform overview
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Peterpaul "Buy Me A Coffee")
+
+### Table of contents
+
+[Platform overview](#overview)  
+[Home Assistant](#hass)
+
+## Platform overview <a name="overview"/>
 
 I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
@@ -71,7 +78,7 @@ For monitoring every hardware equipment in the house i use  `LibreNMS`. Librenms
 </p>
 
 
-## Home Assistant overview
+## Home Assistant <a name="hass"/>
 
 ### Dashboard
 
