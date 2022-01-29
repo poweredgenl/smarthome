@@ -12,7 +12,7 @@ If you like the guide and information [![Buy Me A Coffee](https://www.buymeacoff
 
 I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
-- firewall (pfSense), domain controller (users/auth/windows based systems), monitoring (LibreNMS), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
+- firewall (pfSense), domain controller (users/auth/windows based systems), monitoring (LibreNMS/Smokeping), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
@@ -61,6 +61,15 @@ Small overview of the main equipment running the house. Rack consumes approx 250
   <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
   <img src="https://tweakers.net/i/BnynUxD0-xjVEEZ8QYtpUjkWuh8=/x800/filters:strip_icc():strip_exif()/f/image/MQInl94P9KkwBdvsHLK8Ryuj.jpg?f=fotoalbum_large" />
 </p>
+
+#### Librenms monitoring
+
+For monitoring every hardware equipment in the house i use  `LibreNMS`. Librenms has  a link with telegram (like HA as well), which sents out alerts in case something is wrong. I also use  Smokeping https://oss.oetiker.ch/smokeping/ to monitor more in depth ping / latency etc.
+
+<p align="center">
+  <img src="https://i.imgur.com/wxoAMT0.png" />  
+</p>
+
 
 ## Home Assistant overview
 
