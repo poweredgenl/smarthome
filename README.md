@@ -13,7 +13,10 @@ If you like the guide and information
 ### Table of contents
 
 - [Platform overview](#overview)
- - [The basics](#overview)  
+  - [The basics](#basics)
+  - [Hardware](#hardware)
+   - [Servers](#servers)
+   - [Monitoring](#monitoring)
 - [Home Assistant](#hass)
 
 ## Platform overview <a name="overview"/>
@@ -46,7 +49,7 @@ Docker virtual machine for secondary / specific tasks
 - Monocle cam (translates local cameras on synology into RTSP streams the Echo devices can see/view)
 - Double-take (intermediate software which bridges between Frigate and Compreface)
 
-### Hardware platform
+### Hardware <a name="hardware"/>
 
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
@@ -61,7 +64,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
 
-#### Server rack in storage room
+#### Server & network equipement <a name="servers"/>
 
 Small overview of the main equipment running the house. Rack consumes approx 250 watt 24/7 (which i think is quite reasonable).
 
@@ -70,7 +73,7 @@ Small overview of the main equipment running the house. Rack consumes approx 250
   <img src="https://tweakers.net/i/BnynUxD0-xjVEEZ8QYtpUjkWuh8=/x800/filters:strip_icc():strip_exif()/f/image/MQInl94P9KkwBdvsHLK8Ryuj.jpg?f=fotoalbum_large" />
 </p>
 
-#### Librenms monitoring
+#### Librenms monitoring <a name="monitoring"/>
 
 For monitoring every hardware equipment in the house i use  `LibreNMS`. Librenms has  a link with telegram (like HA as well), which sents out alerts in case something is wrong. I also use  Smokeping https://oss.oetiker.ch/smokeping/ to monitor more in depth ping / latency etc.
 
