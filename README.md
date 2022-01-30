@@ -280,16 +280,16 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   It checks also if the data is current / and if not the message/TTS is different.
   
   No data:
-  '''
+'''
   msg.payload = 
  
   "Hi Peter-Paul, i dont have actual information at this moment."
 
   return msg
-  '''
+'''
   
   If there is information:
-  '''
+'''
   msg.payload = 
 
   "Hi Peter-Paul. Last night you had: {{states.sensor.cpap_ahi_events_per_hour_2.state}} breathing stops per hour,"+ 
@@ -297,7 +297,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   "And you used the CPAP device for: {{states.sensor.cpap_usage_time_2.state}} hours "
 
   return msg
-  '''
+'''
   
 
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
