@@ -201,7 +201,7 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 
 - **Central heating**: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
 - **Kodi integration with Philips Hue + Philips Ambilight** - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
-- **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with media_extractor and node-red, i created a flow which turns on the TV,   and pushes the youtube link with the 4k Fireplace video.
+- **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with `media_extractor` https://www.home-       assistant.io/integrations/media_extractor/ and node-red, i created a flow which turns on the TV, and pushes the youtube link with the 4k Fireplace video.
 
 ### House status <a name="housestatus"/>
 
@@ -239,7 +239,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 
 - **Smoke detection**: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 - **Opentherm Gateway and sensors**: the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other     faults are detected.
-- **Morning alarm/wake up light link**: you can use the integrated sensor of your phone (next_alarm) as an entity in an automation. Philips has nice wakeup         lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns     on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
+- **Morning alarm/wake up light link**: you can use the integrated sensor of your phone (`next_alarm`) as an entity in an automation. Philips has nice wakeup         lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns     on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
 - **Flood sensor**: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water     detected.
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
 - **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
