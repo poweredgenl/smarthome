@@ -197,6 +197,12 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
   - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
 - **Piano mode**: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
 
+#### Other automations <a name="otherautomations"/>
+
+- **Central heating**: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
+- **Kodi integration with Philips Hue + Philips Ambilight** - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
+- **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with `media_extractor` https://www.home-       assistant.io/integrations/media_extractor/ and node-red, i created a flow which turns on the TV, and pushes the youtube link with the 4k Fireplace video.
+
 #### Specific implementations <a name="specific"/>
 
 - **RFXcom433 with Somfy RTS**:
@@ -204,12 +210,6 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
   
   - Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
   - Step 2: When programmed - i took note of the " id " via rfxmgr and used it to MANUALLY! add it via "integrations -> RFXtrx > enter event code to add" ... ive taken the ID from         this website: https://community.home-assistant.io/t/problem-controlling-somfy-blinds-via-rfxtrx/61975. so for example `071a000001010101` ...replace the last     010101 with the ID which your programmed it with via RFXmgr.
-
-#### Other automations <a name="otherautomations"/>
-
-- **Central heating**: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
-- **Kodi integration with Philips Hue + Philips Ambilight** - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
-- **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with `media_extractor` https://www.home-       assistant.io/integrations/media_extractor/ and node-red, i created a flow which turns on the TV, and pushes the youtube link with the 4k Fireplace video.
 
 ### House status <a name="housestatus"/>
 
