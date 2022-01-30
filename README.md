@@ -154,7 +154,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Philips Hue + Innr sockets
 - Philips Android TV (Oled 55")
 - RFXcom 433mhz
-- Resmed MyAir - sleep apnea device which i use. (read out my sleeping health) https://github.com/prestomation/resmed_myair_sensors/
+- Resmed MyAir - medical sleep apnea device
 - Shelly
 - Spotify
 - Synology
@@ -192,6 +192,7 @@ Below are the ones i have implemented in my home. Those not related to security 
   <p align="center">
   <img src="https://i.imgur.com/mliOoes.png" />
   </p>
+  
 
 - Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
 
@@ -224,12 +225,25 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 
 #### Notification system <a name="notifications"/>
 
+Based on booleans i made some automations with respond via Alexa TTS on my request. I use a generic flow/shared service (TTS in, Telegram in, Telegram Photo in) to re-use functionality
+
+  <p align="center">
+  <img src="https://i.imgur.com/MpoG4hi.png" />
+  </p>
+  
+  
 - **House status**: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
 - **Open Windows**: responds / checks which windows are open and responds which are open and need to be closed
 - **Goodmorning**: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
 - **Good night**: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
 - **Where is who?**: based on the frigate information, i can ask " where is Peter-Paul "  which then voices back the last know home location, or, if im away or     my wife is not at home, i will lookup the external location and mention this.
 - **Zwave dead node check**: every day at 1200, the system will check if a zwave node has the 'dead' status. HASS will notify me via telegram if this is the case   and which node is dead (and i have to check).
+
+  <p align="center">
+  <img src="https://i.imgur.com/wH5mT0N.png" />
+  </p> 
+  
+
 - **Kitchen check**: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the       fridge is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
 - **Garden**: we hate cats in the garden whom are keeping  birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this   as well via TTS so we can sprint to the garden and chase it away.
 
@@ -251,11 +265,19 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
   <p align="center">
   <img src="https://i.imgur.com/RvWMoKn.png" />
   </p>
+  
 
 - **Smoke detection**: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 - **Opentherm Gateway and sensors**: the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other     faults are detected.
 - **Morning alarm/wake up light link**: you can use the integrated sensor of your phone (`next_alarm`) as an entity in an automation. Philips has nice wakeup         lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns     on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
 - **Flood sensor**: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water     detected.
+- **Resmed apnea data**: If the data of the Resmed apnea device is uploaded, i can Ask alexa how well did i slept, incl the number of breathing stops per hour it   detected last cycle. I implemented for this the guide / code from https://github.com/prestomation/resmed_myair_sensors/
+
+  <p align="center">
+  <img src="https://i.imgur.com/0rnOZ5i.png" />
+  </p>
+  
+
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
 - **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
 - **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
