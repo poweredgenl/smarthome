@@ -224,7 +224,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
   <img src="https://i.imgur.com/ZAA0E1W.png" />
   </p> 
 
-- **Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
+- **Travel time**: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
 - **Door trigger**: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
 - **Door welcome message**: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in   the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
 - **Alarm system**: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to     telegram / sms and creates photos in the process. This flow i wont share ...
