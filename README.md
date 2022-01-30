@@ -186,6 +186,13 @@ Below are the ones i have implemented in my home. Those not related to security 
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
 - In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected       anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere.
+
+  An example node-red flow looks like this (code in repo):
+  
+  <p align="center">
+  <img src="https://i.imgur.com/mliOoes.png" />
+  </p>
+
 - Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
 
 #### Office / streaming <a name="officeautomations"/>
