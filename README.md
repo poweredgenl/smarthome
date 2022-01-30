@@ -192,15 +192,16 @@ Below are the ones i have implemented in my home. Those not related to security 
 
 I regularly record videos for LinkedIn and using this setup also in my video calls with customers... so i automated a few things.
 
-- When the camera (sony a5100 via camlink 4k on USB) of my macbook is ' on ', it triggers the automation to turn on the studio lights (elgato key lights)
-- When i activate via my streamdeck the 'presenter mode' it:
+- **Auto studio lights**:When the camera (sony a5100 via camlink 4k on USB) of my macbook is ' on ', it triggers the automation to turn on the studio lights (elgato key lights)
+- **Presenter mode**: When i activate via my streamdeck the 'presenter mode' it:
   - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
-- Piano mode: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
+- **Piano mode**: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
 
 #### Other automations <a name="otherautomations"/>
 
-- Central heating: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
-- Kodi integration with Philips Hue + Philips Ambilight - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
+- **Central heating**: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
+- **Kodi integration with Philips Hue + Philips Ambilight** - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
+- **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with media_extractor and node-red, i created a flow which turns on the TV,   and pushes the youtube link with the 4k Fireplace video.
 
 ### House status <a name="housestatus"/>
 
@@ -208,14 +209,14 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 
 #### Notification system <a name="notifications"/>
 
-- House status: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
-- Open Windows: responds / checks which windows are open and responds which are open and need to be closed
-- Goodmorning: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
-- Good night: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
-- Where is who?: based on the frigate information, i can ask " where is Peter-Paul "  which then voices back the last know home location, or, if im away or my     wife is not at home, i will lookup the external location and mention this.
-- Zwave dead node check: every day at 1200, the system will check if a zwave node has the 'dead' status. HASS will notify me via telegram if this is the case and   which node is dead (and i have to check).
-- Kitchen check: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the fridge   is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
-- Garden: we hate cats in the garden whom are keeping  birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this as     well via TTS so we can sprint to the garden and chase it away.
+- **House status**: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
+- **Open Windows**: responds / checks which windows are open and responds which are open and need to be closed
+- **Goodmorning**: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
+- **Good night**: responds nothing - but - when the car is not closed it will ' whisper ' the message thru the speaker i asked / mentioned goodnight to.
+- **Where is who?**: based on the frigate information, i can ask " where is Peter-Paul "  which then voices back the last know home location, or, if im away or     my wife is not at home, i will lookup the external location and mention this.
+- **Zwave dead node check**: every day at 1200, the system will check if a zwave node has the 'dead' status. HASS will notify me via telegram if this is the case   and which node is dead (and i have to check).
+- **Kitchen check**: sometimes it can happen the frigirator door is left open, after 2 minutes, it will mention this via a generic announce on alexa that the       fridge is indeed open and needs to be closed. (you all know - sometimes in a rush - we forget)
+- **Garden**: we hate cats in the garden whom are keeping  birds / wildlife away, so the camera / Frigate checks if theres a cat in the garden and mentions this   as well via TTS so we can sprint to the garden and chase it away.
 
   To show you this works - a screenshot from Frigate which detected the cat and is sent to HA.
   
@@ -223,12 +224,12 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
   <img src="https://i.imgur.com/ZAA0E1W.png" />
   </p> 
 
-- Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
-- Door trigger: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
-- Door welcome message: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in the   hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
-- Alarm system: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to         telegram / sms and creates photos in the process. This flow i wont share ...
-- Washing machine + dryer: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the         washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
-- Battery check: every day at 1200, the system will check the battery of the sensors in the house and will mention if a sensor is below 15% via a message on       telegram.
+- **Travel time: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
+- **Door trigger**: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
+- **Door welcome message**: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in   the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
+- **Alarm system**: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to     telegram / sms and creates photos in the process. This flow i wont share ...
+- **Washing machine + dryer**: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will notice the     washing machine or dryer is not in cycle mode anymore, and will report this accordingly.
+- **Battery check**: every day at 1200, the system will check the battery of the sensors in the house and will mention if a sensor is below 15% via a message on   telegram.
   
   Example of the laundry equipment and the empty batteries. (in this case a zwave radiator).
 
@@ -236,27 +237,27 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
   <img src="https://i.imgur.com/RvWMoKn.png" />
   </p>
 
-- Smoke detection: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
-- With Opentherm Gateway and sensors, the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other     faults are detected.
-- Morning alarm/wake up light link: you can use the integrated sensor of your phone (next_alarm) as an entity in an automation. Philips has nice wakeup lights     but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns on a       wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
-- Flood sensor: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water         detected.
-- Electric bike charging done?: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the battery   of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
-- Particle density: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
-- BMW fuel remaining: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
+- **Smoke detection**: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
+- **Opentherm Gateway and sensors**: the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other     faults are detected.
+- **Morning alarm/wake up light link**: you can use the integrated sensor of your phone (next_alarm) as an entity in an automation. Philips has nice wakeup         lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns     on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
+- **Flood sensor**: when flooding is detected in the storage room - HA will sent a telegram warning message and announce via the Alexa speakers there is water     detected.
+- **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
+- **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
+- **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
 
-ALso i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
+Also i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
 
-For example, you can ask Alexa the location of the following items (list limited - expanding as i go along)
+For example, you can ask Alexa via ' **where is ...** ' the location of the following items (list limited - expanding as i go along). 
 
 - Batteries, wine glasses, cutlery, plates, herbs, paint, tape, toilet paper, tea, coffee, candles, soup, medicines, etc.
 
-On the ' how to do what ' side, i created input for, how to do:
+On the ' **how to do what** ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
 ### Specific implementations <a name="specific"/>
 
-- RFXcom433 with Somfy RTS:
+- **RFXcom433 with Somfy RTS**:
   I had to do some fiddeling with the RXcom to get my Somfy RTS blinds working (telis 1 remote). For this i used a number of sites but in general the approach is   this:
   
   - Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
@@ -264,10 +265,10 @@ On the ' how to do what ' side, i created input for, how to do:
 
 ## ToDo & Work in progress <a name="wip"/>
 
-- Garden irrigation / anti-cat: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water the     plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
-- Out of bed lights: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
-- Grocy / Groceries inventory management: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet. WIP   untill i find something to monitor.
-- Alexa actionable notifications - https://github.com/keatontaylor/alexa-actions/wiki
+- **Garden irrigation / anti-cat**: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water     the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
+- **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
+- **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
+- **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
 
 ## Community ideas? <a name="ideas"/>
 
