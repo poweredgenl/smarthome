@@ -26,9 +26,9 @@ If you like the guide and information
     - [Lights](#lightautomations)
     - [Office & streaming](#officeautomations)
     - [Other automations](#otherautomations)
+    - [Specific implementations](#specific)
   - [House status](#housestatus)
     - [Notification system](#notifications)
-  - [Specific implementations](#specific)
   - [ToDo / Work in progress](#wip)
 - [Your ideas?](#ideas)
 
@@ -147,12 +147,12 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Mac Home Assistant companion - to integrate my macbook sensors in HA to do cool automations
 - Google Nest
 - Google Cast
-- Kodi
+- Kodi (on Nvidia Shield TV 2017)
 - Network UPS tools
 - Node-red
 - Opentherm Gateway with NodeMCU: https://github.com/rvdbreemen/OTGW-firmware
-- Philips Hue
-- Philips Android TV
+- Philips Hue + Innr sockets
+- Philips Android TV (Oled 55")
 - RFXcom 433mhz
 - Resmed MyAir - sleep apnea device which i use. (read out my sleeping health) https://github.com/prestomation/resmed_myair_sensors/
 - Shelly
@@ -196,6 +196,14 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 - **Presenter mode**: When i activate via my streamdeck the 'presenter mode' it:
   - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
 - **Piano mode**: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
+
+#### Specific implementations <a name="specific"/>
+
+- **RFXcom433 with Somfy RTS**:
+  I had to do some fiddeling with the RXcom to get my Somfy RTS blinds working (telis 1 remote). For this i used a number of sites but in general the approach is   this:
+  
+  - Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
+  - Step 2: When programmed - i took note of the " id " via rfxmgr and used it to MANUALLY! add it via "integrations -> RFXtrx > enter event code to add" ... ive taken the ID from         this website: https://community.home-assistant.io/t/problem-controlling-somfy-blinds-via-rfxtrx/61975. so for example `071a000001010101` ...replace the last     010101 with the ID which your programmed it with via RFXmgr.
 
 #### Other automations <a name="otherautomations"/>
 
@@ -254,14 +262,6 @@ For example, you can ask Alexa via ' **where is ...** ' the location of the foll
 On the ' **how to do what** ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
-
-### Specific implementations <a name="specific"/>
-
-- **RFXcom433 with Somfy RTS**:
-  I had to do some fiddeling with the RXcom to get my Somfy RTS blinds working (telis 1 remote). For this i used a number of sites but in general the approach is   this:
-  
-  - Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
-  - Step 2: When programmed - i took note of the " id " via rfxmgr and used it to MANUALLY! add it via "integrations -> RFXtrx > enter event code to add" ... ive taken the ID from         this website: https://community.home-assistant.io/t/problem-controlling-somfy-blinds-via-rfxtrx/61975. so for example `071a000001010101` ...replace the last     010101 with the ID which your programmed it with via RFXmgr.
 
 ## ToDo & Work in progress <a name="wip"/>
 
