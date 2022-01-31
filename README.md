@@ -224,6 +224,43 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
   
   - Step 1: link your telis 1 remote to your RFXcom433 receiver. I did this on a windows machine with rfxmgr from http://www.rfxcom.com/downloads.htm
   - Step 2: When programmed - i took note of the " id " via rfxmgr and used it to MANUALLY! add it via "integrations -> RFXtrx > enter event code to add" ... ive taken the ID from         this website: https://community.home-assistant.io/t/problem-controlling-somfy-blinds-via-rfxtrx/61975. so for example `071a000001010101` ...replace the last     010101 with the ID which your programmed it with via RFXmgr.
+ 
+ - **Sensor.community**: im using a air quality sensor from Sensor.community (eg Nova SDS011), but i want to have the output of the sensor information in my HA dashboard more readable. For this i added the following code to `configuration.yaml`.
+
+```
+ - platform: template
+   sensors:
+     air_quality_pm10:
+       friendly_name: 'Air quality PM10'
+       value_template: >-
+         {%if states.sensor.pm10_stats.state | float<=25 %}
+           Excellent
+         {% elif states.sensor.pm10_stats.state | float<=50 | float>25 %}
+           Good
+         {% elif states.sensor.pm10_stats.state | float<=90 | float>25 %}
+           Fair
+         {% elif states.sensor.pm10_stats.state | float<=180 | float>90 %}
+           Moderate
+         {% elif states.sensor.pm10_stats.state | float>180 %}
+           Poor
+         {%- endif %}
+ - platform: template
+   sensors:
+     air_quality_pm25:
+       friendly_name: 'Air quality PM2.5'
+       value_template: >-
+         {%if states.sensor.pm25_stats.state | float<=15 %}
+           Excellent
+         {% elif states.sensor.pm25_stats.state | float<=30 | float>15 %}
+           Good
+         {% elif states.sensor.pm25_stats.state | float<=55 | float>30 %}
+           Fair
+         {% elif states.sensor.pm25_stats.state | float<=110 | float>55 %}
+           Moderate
+         {% elif states.sensor.pm25_stats.state | float>110 %}
+           Poor
+         {%- endif %}
+```
 
 ### House status <a name="housestatus"/>
 
