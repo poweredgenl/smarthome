@@ -36,7 +36,7 @@ If you like the guide and information
 
 I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
-- Firwall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring (LibreNMS/Smokeping), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
+- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
@@ -53,24 +53,28 @@ HASS virtual machine
 - Node-RED for automation flows
 - RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
 
-Later in this readme all the integrations i have enabled in Home Assistant.
-
-Docker virtual machine for secondary / specific tasks
-- Compreface (AI/ML vision API)
+Docker virtual host for specific tasks
+- [Compreface](https://github.com/exadel-inc/CompreFace)) - Video image processing with ML for realtime person tracking - (
 - DSMR reader
 - Portainer
-- Monocle cam (translates local cameras on synology into RTSP streams the Echo devices can see/view)
-- Double-take (intermediate software which bridges between Frigate and Compreface)
+- ([Monoclecam](https://monoclecam.com/)) (translates local cameras on synology into RTSP streams the Echo devices can see/view)
+- ([Double Take]( https://github.com/jakowenko/double-take)) - intermediate software which bridges between Frigate and Compreface
+
+Synology DS920+
+- Basic storage for media, virtual machines etc
+- Hub for cameras
+- ([Frigate NVR](https://github.com/blakeblackshear/frigate)) - (due to not having h264 GPU offloading on ESXi)
+
 
 ### Hardware <a name="hardware"/>
 
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
-- Synology DS920+ (4x 3TiB)
+- Synology DS920+ (4x 3TiB) + External 640gb disk for 2nd backup.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, etc)
 - 4x Vivotek / 2x Foscam POE cameras.
-- Google Coral TPU
+- Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
 - 2x Raspberry PI 4b + POE HAT (for P1/Rfxcom, and one for the Home Dashboard - see below))
 - 23" Industrial touchscreen 
@@ -180,7 +184,9 @@ Below are the ones i have implemented in my home. Those not related to security 
 
 #### Realtime video analysis with ML <a name="videotracking"/>
 
-- Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface. (check out https://github.com/jakowenko/double-take)
+I thought it would be cool to track people around the house, without recording, to see where which person is.
+
+- Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface. (check out https://github.com/jakowenko/double-take).
 
 #### Light automations <a name="lightautomations"/>
 
