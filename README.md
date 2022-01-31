@@ -29,7 +29,7 @@ If you like the guide and information
     - [Specific implementations](#specific)
   - [House status](#housestatus)
     - [Notification system](#notifications)
-  - [ToDo / Work in progress](#wip)
+  - [Backlog / Work in progress](#wip)
 - [Your ideas?](#ideas)
 
 ## Platform overview <a name="overview"/>
@@ -313,12 +313,13 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
-## ToDo & Work in progress <a name="wip"/>
+## Backlog & Work in progress <a name="wip"/>
 
 - **Garden irrigation / anti-cat**: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water     the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
 - **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
+- **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
 
 ## Community ideas? <a name="ideas"/>
 
