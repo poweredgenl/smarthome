@@ -261,6 +261,16 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
            Poor
          {%- endif %}
 ```
+- **Convert kwh to Watt**. My dsmr reader mentions the power usage in Kwh, for easy viewing i let HA convert this to Watts with the following code in `configuration.yaml`.
+
+```
+- platform: template
+   sensors:
+        power_consumption_w:
+          friendly_name: 'Current power usage watt'
+          unit_of_measurement: 'W'  
+          value_template: "{{(states('sensor.dsmr_reading_electricity_currently_delivered') | float * 1000) | int }}"
+```
 
 ### House status <a name="housestatus"/>
 
