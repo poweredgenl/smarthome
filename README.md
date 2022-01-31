@@ -54,16 +54,16 @@ HASS virtual machine
 - RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
 
 Docker virtual host for specific tasks
-- [Compreface](https://github.com/exadel-inc/CompreFace)) - Video image processing with ML for realtime person tracking - (
+- [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking - (
 - DSMR reader
 - Portainer
-- ([Monoclecam](https://monoclecam.com/)) (translates local cameras on synology into RTSP streams the Echo devices can see/view)
-- ([Double Take]( https://github.com/jakowenko/double-take)) - intermediate software which bridges between Frigate and Compreface
+- [Monoclecam](https://monoclecam.com/) (translates local cameras on synology into RTSP streams the Echo devices can see/view)
+- [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
 
 Synology DS920+
 - Basic storage for media, virtual machines etc
 - Hub for cameras
-- ([Frigate NVR](https://github.com/blakeblackshear/frigate)) - (due to not having h264 GPU offloading on ESXi)
+- [Frigate NVR](https://github.com/blakeblackshear/frigate) - (due to not having h264 GPU offloading on ESXi)
 
 
 ### Hardware <a name="hardware"/>
