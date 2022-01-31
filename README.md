@@ -36,7 +36,7 @@ If you like the guide and information
 
 I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
-- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstones, raspberry pi's for individual tasks etc. 
+- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), Raspberry pi's for individual tasks etc. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
