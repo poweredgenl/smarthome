@@ -281,7 +281,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 Based on booleans i made some automations with respond via Alexa TTS on my request. I use a generic flow/shared service (TTS in, Telegram in, Telegram Photo in) to re-use functionality
 
   <p align="center">
-  <img src="https://i.imgur.com/MpoG4hi.png" width=40% height=40%>
+  <img src="https://i.imgur.com/MpoG4hi.png" width=60% height=60%>
   </p>
   
   
@@ -316,7 +316,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   Example of the laundry equipment and the empty batteries. (in this case a zwave radiator).
 
   <p align="center">
-  <img src="https://i.imgur.com/RvWMoKn.png" width=40% height=40%>
+  <img src="https://i.imgur.com/RvWMoKn.png" width=60% height=60%>
   </p>
   
 
