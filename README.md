@@ -355,8 +355,8 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   Some example data and a picture so that people have an impression what the device is.
   
   <p align="center">
-  <img src="https://i.imgur.com/yQeSDJs.png" width=50% height=50%>
-  <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" width=50% height=50%>
+  <img src="https://i.imgur.com/yQeSDJs.png" width=30% height=30%>
+  <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" width=53% height=30%>
   </p>
   
     
