@@ -352,6 +352,14 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   return msg
   ```
   
+  Some example data and a picture so that people have an impression what the device is.
+  
+  <p align="center">
+  <img src="https://i.imgur.com/yQeSDJs.png" />
+  <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" />
+  </p>
+  
+    
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
 - **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
 - **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
@@ -373,6 +381,7 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
+
 
 ## Community ideas? <a name="ideas"/>
 
