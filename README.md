@@ -327,7 +327,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
 - **Resmed apnea data**: If the data of the Resmed apnea device is uploaded, i can Ask alexa how well did i slept, incl the number of breathing stops per hour it   detected last cycle. I implemented for this the guide / code from https://github.com/prestomation/resmed_myair_sensors/
 
   <p align="center">
-  <img src="https://i.imgur.com/0rnOZ5i.png" />
+  <img src="https://i.imgur.com/0rnOZ5i.png">
   </p>
   
   It checks also if the data is current / and if not the message/TTS is different.
@@ -355,8 +355,8 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   Some example data and a picture so that people have an impression what the device is.
   
   <p align="center">
-  <img src="https://i.imgur.com/yQeSDJs.png" width=50% height=50% />
-  <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" width=50% height=50% />
+  <img src="https://i.imgur.com/yQeSDJs.png" width=50% height=50%>
+  <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" width=50% height=50%>
   </p>
   
     
