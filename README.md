@@ -281,7 +281,7 @@ I wanted to maximize the way the house is reponsive in voice and notifications a
 Based on booleans i made some automations with respond via Alexa TTS on my request. I use a generic flow/shared service (TTS in, Telegram in, Telegram Photo in) to re-use functionality
 
   <p align="center">
-  <img src="https://i.imgur.com/MpoG4hi.png" />
+  <img src="https://i.imgur.com/MpoG4hi.png" width=40% height=40%>
   </p>
   
   
@@ -303,7 +303,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   To show you this works - a screenshot from Frigate which detected the cat and is sent to HA.
   
   <p align="center">
-  <img src="https://i.imgur.com/ZAA0E1W.png" />
+  <img src="https://i.imgur.com/ZAA0E1W.png" width=40% height=40%>
   </p> 
 
 - **Travel time**: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
@@ -316,7 +316,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   Example of the laundry equipment and the empty batteries. (in this case a zwave radiator).
 
   <p align="center">
-  <img src="https://i.imgur.com/RvWMoKn.png" />
+  <img src="https://i.imgur.com/RvWMoKn.png" width=40% height=40%>
   </p>
   
 
