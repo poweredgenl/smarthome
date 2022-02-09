@@ -55,7 +55,7 @@ HASS virtual machine
 
 Docker virtual host for specific tasks
 - [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking - (
-- DSMR reader
+- [DSMR reader](https://github.com/xirixiz/dsmr-reader-docker) 
 - Portainer
 - [Monoclecam](https://monoclecam.com/) (translates local cameras on synology into RTSP streams the Echo devices can see/view)
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
