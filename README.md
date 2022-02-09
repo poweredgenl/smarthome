@@ -359,6 +359,8 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   <img src="https://www.viviwebshop.be/shops/vivishop/37245-resmed-airsense-10-autoset-2.jpg" width=40% height=40%>
   </p>
   
+-  This script is also used in my **Start my workday** routine. Alexa responds with a confirmation (after " alexa start my workday "), turns on the soundsystem      (i use a separate one with micro / speakers etc), reports the weather, and tells me the sleeping data how well i slept.
+  
     
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
 - **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
