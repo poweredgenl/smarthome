@@ -376,7 +376,15 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 - Turn on / off the lights, oven, furance, use the thermostat, view the tV, view the cameras, hot water tap, the shower, etc.
 
-## Backlog & Work in progress <a name="wip"/>
+## In Progress <a name="wip"/>
+
+## Building
+
+- Based on ESP32 dev boards im implementing a -per room- tracking system paralell to the NVR/AI setup. With hhttps://espresense.com/ as basis.
+
+  I already have trakcing enabled downstairs but i want to enable it thru the rest of the house in every room based on BLE/BL signals from our phone and/or         activity trackers.
+
+### Backlog
 
 - **Garden irrigation / anti-cat**: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water     the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
 - **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
