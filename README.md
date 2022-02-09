@@ -380,7 +380,7 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 ### Building
 
-- Based on ESP32 dev boards im implementing a -per room- tracking system paralell to the NVR/AI setup. With hhttps://espresense.com/ as basis.
+- Based on ESP32 dev boards im implementing a -per room- tracking system paralell to the NVR/AI setup. With https://espresense.com/ as basis.
 
   I already have trakcing enabled downstairs but i want to enable it thru the rest of the house in every room based on BLE/BL signals from our phone and/or         activity trackers.
 
