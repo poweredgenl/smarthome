@@ -378,7 +378,7 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 ## In Progress <a name="wip"/>
 
-## Building
+### Building
 
 - Based on ESP32 dev boards im implementing a -per room- tracking system paralell to the NVR/AI setup. With hhttps://espresense.com/ as basis.
 
