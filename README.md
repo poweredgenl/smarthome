@@ -72,14 +72,15 @@ There are multiple options for running the above components, commonly a Raspberr
 
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
 - Synology DS920+ (4x 3TiB) + External 640gb disk for 2nd backup.
-- HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, etc)
+- HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 4x Vivotek / 2x Foscam POE cameras.
-- Google Coral TPU (on Synology)
+- 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
 - 2x Raspberry PI 4b + POE HAT (for P1/Rfxcom, and one for the Home Dashboard - see below))
 - 23" Industrial touchscreen 
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
+- 4x ESP32 dev boards for room tracking (see WIP chapter)
 
 #### Server & network equipement <a name="servers"/>
 
