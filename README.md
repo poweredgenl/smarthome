@@ -393,6 +393,7 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
+- **Google Fit/Xiaomi Mi Band 6** new fitness tracker which i use i want to integrate it as well. 
 
 
 ## Community ideas? <a name="ideas"/>
