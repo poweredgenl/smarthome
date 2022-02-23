@@ -218,6 +218,7 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 - **Central heating**: when the windows in the office or master bedroom are open, the radiator valve is automatically closed. Done via a workaround to set the         radiator at a very low temperature level. (14 degrees celcius)
 - **Kodi integration with Philips Hue + Philips Ambilight** - when a movie is started - HASS switches Ambilight + Hue on so we have ambient lighting during the         movie.
 - **Fireplace**: we dont have regular fireplace but youtube is your friend. In combination with `media_extractor` https://www.home-       assistant.io/integrations/media_extractor/ and node-red, i created a flow which turns on the TV, and pushes the youtube link with the 4k Fireplace video.
+- **Kitchen stove fan + Alexa volume**: when the stove ventilation is one, based on power usage above 41 watss (i know - above 41 watss -> the ventilation is one)... HA will increase the volume of the Alexa speaker, and lowers it to the default when the fan is off.
 
 #### Specific implementations <a name="specific"/>
 
