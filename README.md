@@ -189,7 +189,7 @@ Below are the ones i have implemented in my home. Those not related to security 
 I thought it would be cool to track people around the house, without recording, to see where which person is.
 
 - Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface. (check out https://github.com/jakowenko/double-take).
-- Using ESPresence to track BLE devices.
+- Using ESPresence (https://espresense.com/) to track BLE devices.
 
 As i use multiple trackers / BLE / video / the HA companion apps - i want to merge the trackers to give me 1 overview sensor in HA which shows the last updated sensor. I use the following code for this:
 
