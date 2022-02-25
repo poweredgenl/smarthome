@@ -22,7 +22,7 @@ If you like the guide and information
   - [HA integrations](#integrations)
   - [Automations](#automations)
     - [Overview](#genericautomations)
-    - [Realtime video tracking](#videotracking)
+    - [Realtime presence tracking](#videotracking)
     - [Lights](#lightautomations)
     - [Office & streaming](#officeautomations)
     - [Other automations](#otherautomations)
@@ -184,11 +184,33 @@ Below are the ones i have implemented in my home. Those not related to security 
 - The upstairs thermostats are joined in a climate group so i can control them as a whole floor. (eurotronic spirit zwave)
 - Nightly the HASS and frigate/AI-ML setup is backupped and transferred 1 locally to the drive 2 copied to the NAS 3 synced with a cloud storage provider. (using   the 3 2 1 method for backups)
 
-#### Realtime video analysis with ML <a name="videotracking"/>
+#### Realtime presence tracking<a name="videotracking"/>
 
 I thought it would be cool to track people around the house, without recording, to see where which person is.
 
 - Using Frigate NVR with the Coral USB to actively track the people in my house. its now trained with myself and my wife with Compreface. (check out https://github.com/jakowenko/double-take).
+- Using ESPresence to track BLE devices.
+
+As i use multiple trackers / BLE / video / the HA companion apps - i want to merge the trackers to give me 1 overview sensor in HA which shows the last updated sensor. I use the following code for this:
+
+```
+ - platform: template
+   sensors:
+     recent_location_pp:
+       friendly_name: 'Recent location PP'
+       value_template: >-
+         {% set x =  [ states.sensor.XX,
+                       states.person.XX,
+                       states.sensor.XX-BLE ]
+               | sort(reverse=true, attribute='last_changed')
+               | list %}
+         {% if x | count > 0 %}
+           {{ x[0].state }}
+         {% else %}
+           {{ states('sensor.recent_location_pp') }}
+         {% endif %}
+       entity_picture_template: /local/XX.jpeg
+```
 
 #### Light automations <a name="lightautomations"/>
 
@@ -394,7 +416,6 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
-- **Google Fit/Xiaomi Mi Band 6** new fitness tracker which i use i want to integrate it as well. 
 
 
 ## Community ideas? <a name="ideas"/>
