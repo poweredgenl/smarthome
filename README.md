@@ -160,7 +160,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Philips Hue + Innr sockets
 - Philips Android TV (Oled 55")
 - RFXcom 433mhz
-- Resmed MyAir - medical sleep apnea device
+- Resmed MyAir - medical sleep apnea device (EDIT: not working due to 2fa - trying to solve the issue)
 - Shelly
 - Spotify
 - Synology
