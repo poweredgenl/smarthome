@@ -81,7 +81,8 @@ There are multiple options for running the above components, commonly a Raspberr
 - 23" Industrial touchscreen 
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
-- 4x ESP32 dev boards for room tracking (see WIP chapter)
+- 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
+- 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
 
 #### Server & network equipement <a name="servers"/>
 
@@ -142,7 +143,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Buienradar (weather forecast the Netherlands)
 - CO2 Signal
 - DSMR reader
-- Elgato Key light (2 in studio)
+- Elgato Key light
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - Grocy
@@ -345,6 +346,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   </p>
   
 
+- **Torrents finished**: when the downloads in transmission are done the system sends a telegram and whisper to the Alexa system as notification. "Hello, your downloads are ready".
 - **Smoke detection**: multiple smoke detectors placed around the house which report via SMS / Telegram with photo and the HASS app if there is an emergency.
 - **Opentherm Gateway and sensors**: the house notifies me when the pressure of the heating system is getting low, and/or, issues with the boiler flame, other     faults are detected.
 - **Morning alarm/wake up light link**: you can use the integrated sensor of your phone (`next_alarm`) as an entity in an automation. Philips has nice wakeup         lights but if you want this effect/routine with a different styled lamp then you have to program it yourself. Have build a node-red flow which checks / turns     on a wakeuplight routine for me and my wife based on the alarm setting on our (android phones).
@@ -388,7 +390,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   
     
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
-- **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air).
+- **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air). Currently implemented for the downstairs sensors.
 - **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
 
 Also i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
@@ -405,9 +407,11 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 ### Building
 
-- Based on ESP32 dev boards im implementing a -per room- tracking system paralell to the NVR/AI setup. With https://espresense.com/ as basis.
+- Based on ESP32 dev boards im implementing a -per room- tracking system. Also working with trilateralization (app deamon) to do more accurate pinpointing of devices. 
+  Done: Kitchen, Living, Office, Master bedroom
+  ToDo: Hallway, Storage, Dining, Attic
 
-  I already have trakcing enabled downstairs but i want to enable it thru the rest of the house in every room based on BLE/BL signals from our phone and/or         activity trackers. Planned are 9 zones (dining, living, hallway, kitchen, storage, office, master bedroom, baby room, attic). 4 are in construction to test the   setup.
+
 
 ### Backlog
 
@@ -415,6 +419,8 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
+- **ResMed Apnea**: fixing / checking wether I can work with 2fa to inject data.
+- **pfSense integration**: working
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
 
 
