@@ -54,12 +54,13 @@ HASS virtual machine
 - RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
 
 Docker  host for specific tasks
+- [Portainer](https://portainer.io) for management of container stacks
 - [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking - (
-- [DSMR reader](https://github.com/xirixiz/dsmr-reader-docker) 
-- Portainer
-- [Monoclecam](https://monoclecam.com/) (translates local cameras on synology into RTSP streams the Echo devices can see/view)
+- [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
+- [Portainer](https://portainer.io) for management of container stacks
+- [Monoclecam](https://monoclecam.com/) (translates local cameras on synology into RTSP streams the Echo devices can see/view) - OFFLINE due no need.
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
-- [OpenVAS](https://medium.com/@lam_1535/openvas-docker-compose-d6f50d9b1075) Security scanning software to keep everything in check.
+
 
 Synology DS920+
 - Basic storage for media, virtual machines etc
