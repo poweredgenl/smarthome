@@ -74,6 +74,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
 - Synology DS920+ (4x 3TiB) + External 640gb disk for 2nd backup.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
+- 3x UniFi 6 Lite
 - 4x Vivotek / 2x Foscam POE cameras.
 - 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
@@ -167,6 +168,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Synology
 - Transmission BT (on Synology)
 - pfSense UPNP
+- Unifi Network Application/controller
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
 - Tasmoto
