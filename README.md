@@ -395,6 +395,8 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
 - **Electric bike charging done?**: using a power socket - monitoring how much energy it consumes - i know based on amount of W consumed per hour - when the       battery of the bicycle is full. HA will then via TTS announce that the bicycle battery is ready.
 - **Particle density**: you can ask Alexa to tell you the current PM2.5 and PM10 particle density in the house in micrograms per qubic meter (air). Currently implemented for the downstairs sensors.
 - **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
+- **BMW horn honk**: yes dont ask, i added a routine (when the car is home), to ask alexa to press the horn. Something fun to do as well :-)
+- **BMW activate airconditioning**: asking Alexa to activate the AC on hot days.
 
 Also i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
 
