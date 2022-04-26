@@ -1,10 +1,10 @@
-# H17 Smarthome project aka my Tony Stark a like house.
+# H17 Smarthome project
 
 ## Intro
 
 This repository contains all information and scripts (as much as possible) on my smarthome projects. As im working with Red Hat, i want to honor the open source way of working to share my automations and setup. Things i wont share are specifics around the alarm system and security setup.
 
-H17 refers to the street and housename ... so theres the history in that. The inspiration for many things started with seeing the Marvel Iron Man movies, the house of Tony stark. Although I don't have such a lofty mansion, many things i implemented like his. (Voice, machine learning, automations, proactive  notifocations etc) . Further, im living with a son and my wife in the Netherlands.
+H17 refers to the street and housename ... so theres the history in that. The inspiration for many things started with seeing the Marvel Iron Man movies, the house of Tony stark. Although I don't have such a lofty mansion, many things i implemented like his. (Voice, machine learning, automations, proactive  notifocations etc) .
 
 If you like the guide and information 
 
