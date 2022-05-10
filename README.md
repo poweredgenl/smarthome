@@ -418,17 +418,16 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 
 
-### Backlog
+### Backlog 
+
+See the issues page on github for the enhancement. Below a short summary:
 
 - **Garden irrigation / anti-cat**: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water     the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
 - **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
 - **Alexa actionable notifications** - https://github.com/keatontaylor/alexa-actions/wiki
 - **ResMed Apnea**: fixing / checking wether I can work with 2fa to inject data.
-- **pfSense integration**: working
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
-- **BMW windows open/closed**: a notification when windows are open that they either get closed by HA or there is an actionable notification when it starts raining. Thanks: www.github.com/jskoetsier
-- **BMW pre heating**: when i need to drive to the customer/office/elsewhere and the temperature is low (or high) cool / pre heat the car before my trip. Thanks: www.github.com/jskoetsier
 
 
 ## Community ideas? <a name="ideas"/>
