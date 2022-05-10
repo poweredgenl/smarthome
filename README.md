@@ -427,6 +427,7 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **ResMed Apnea**: fixing / checking wether I can work with 2fa to inject data.
 - **pfSense integration**: working
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
+- **BMW windows open/closed**: a notification when windows are open that they either get closed by HA or there is an actionable notification when it starts raining. 
 
 
 ## Community ideas? <a name="ideas"/>
