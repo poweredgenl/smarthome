@@ -52,6 +52,7 @@ HASS virtual machine
 - Wifi / MQTT modules
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
+  - Tuya based lights (3x)
 - Node-RED for automation flows
 - RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
 
@@ -175,6 +176,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
 - Tasmoto
+- Tuya + Tuya local
 
 ### Automations <a name="automations"/>
 
