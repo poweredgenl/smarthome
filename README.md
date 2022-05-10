@@ -427,7 +427,8 @@ On the ' **how to do what** ' side, i created input for, how to do:
 - **ResMed Apnea**: fixing / checking wether I can work with 2fa to inject data.
 - **pfSense integration**: working
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
-- **BMW windows open/closed**: a notification when windows are open that they either get closed by HA or there is an actionable notification when it starts raining. 
+- **BMW windows open/closed**: a notification when windows are open that they either get closed by HA or there is an actionable notification when it starts raining. Thanks: www.github.com/jskoetsier
+- **BMW pre heating**: when i need to drive to the customer/office/elsewhere and the temperature is low (or high) cool / pre heat the car before my trip. Thanks: www.github.com/jskoetsier
 
 
 ## Community ideas? <a name="ideas"/>
