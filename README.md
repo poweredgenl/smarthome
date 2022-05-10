@@ -10,6 +10,8 @@ If you like the guide and information
 
 [![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/Peterpaul "Buy Me A Coffee")
 
+If you have suggestions - make an item / issue or pull request perhaps i can implement it!
+
 ### Table of contents
 
 - [Platform overview](#overview)
@@ -418,17 +420,13 @@ On the ' **how to do what** ' side, i created input for, how to do:
 
 
 
-### Backlog 
+### Backlog && Ideas  <a name="ideas"/>
 
-See the issues page on github for the enhancement. Below a short summary:
+See the https://github.com/poweredgenl/smarthome/issues page on github for the enhancement. Below a short summary:
 
 - **Garden irrigation / anti-cat**: on the roadmap is the refurbishment of the front and back garden, the latter including a sprinkler system, which will water     the plants and grass and acts also as a friendly 'chase the cats' away routine. If cat==detected, then turn on sprinkler system. :-)
-- **Out of bed lights**: i have no lights / step out lights under the bed at the moment, probably this will be built in the near future.
 - **Grocy / Groceries inventory management**: already had grocy running / integrated but no good sensor/hardware use case found to test inventory management yet.   WIP untill i find something to monitor.
-- **ResMed Apnea**: fixing / checking wether I can work with 2fa to inject data.
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
 
 
-## Community ideas? <a name="ideas"/>
 
-Do you have ideas which i didnt have thought about ? Perhaps you can suggest them so i can build them as well.
