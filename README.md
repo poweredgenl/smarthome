@@ -26,6 +26,7 @@ If you have suggestions - make an item / issue or pull request perhaps i can imp
     - [Overview](#genericautomations)
     - [Realtime presence tracking](#videotracking)
     - [Lights](#lightautomations)
+    - [Green IT / Energy efficiency](#green)
     - [Office & streaming](#officeautomations)
     - [Other automations](#otherautomations)
     - [Specific implementations](#specific)
@@ -223,6 +224,7 @@ As i use multiple trackers / BLE / video / the HA companion apps - i want to mer
 #### Light automations <a name="lightautomations"/>
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
+- Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
 - In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected       anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere. This is also activated when the lights are off, and no motion is     detected at sunset. If all those cases are met - the mood lights are activated automatically.
 
   An example node-red flow looks like this (code in repo):
@@ -231,8 +233,16 @@ As i use multiple trackers / BLE / video / the HA companion apps - i want to mer
   <img src="https://i.imgur.com/mliOoes.png" />
   </p>
   
+#### Green IT / Sustanability <a name="green"/>
+ 
+For maximum energy savings i have implemented next to automatic light switching the following options. More options tb implemented, see for this the backlog on the issues page.
 
-- Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
+- Automatic start / shutdown of the Raspberry PI's controlling, 1 the home screen 2 the backup storage. Using SSH in Node Red for shutdown and via an SSH -> SNMPSET command to power off the POE port of the resptive switch. See:  https://github.com/poweredgenl/smarthome/issues/11
+
+<p align="center">
+  <img src="https://i.imgur.com/pr2LWBI.png" />
+  </p>
+  
 
 #### Office / streaming <a name="officeautomations"/>
 
