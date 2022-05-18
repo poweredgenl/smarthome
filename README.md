@@ -88,7 +88,8 @@ There are multiple options for running the above components, commonly a Raspberr
   - Storage monitoring station
   - Backup server / location.
 - 2x 23" Industrial touchscreen (for Homescreen and monitoring station)
-- P1 cable / reader on PI #2
+- 1x Raspberry PI Zero W with USB/Ehternet hub.
+  - P1 cable / DSMR reader
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
 - 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
 - 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
