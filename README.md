@@ -84,9 +84,9 @@ There are multiple options for running the above components, commonly a Raspberr
 - 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
 - 3x Raspberry PI 4b + POE HAT for:
- - Homescreen
- - Storage monitoring station
- - Backup server / location.
+  - Homescreen
+  - Storage monitoring station
+  - Backup server / location.
 - 2x 23" Industrial touchscreen (for Homescreen and monitoring station)
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
