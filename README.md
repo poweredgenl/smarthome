@@ -83,8 +83,11 @@ There are multiple options for running the above components, commonly a Raspberr
 - 4x Vivotek / 2x Foscam POE cameras.
 - 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
-- 2x Raspberry PI 4b + POE HAT (for P1/Rfxcom, and one for the Home Dashboard - see below))
-- 23" Industrial touchscreen 
+- 3x Raspberry PI 4b + POE HAT for:
+ - Homescreen
+ - Storage monitoring station
+ - Backup server / location.
+- 2x 23" Industrial touchscreen (for Homescreen and monitoring station)
 - P1 cable / reader on PI #2
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
 - 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
