@@ -154,6 +154,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - CO2 Signal
 - DSMR reader
 - Elgato Key light
+- ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - Grocy
@@ -246,6 +247,8 @@ For maximum energy savings i have implemented next to automatic light switching 
 <p align="center">
   <img src="https://i.imgur.com/pr2LWBI.png" />
   </p>
+
+- Via the ESXI stats integration im controlling the power of multiple virtual machines as well. During the day the VEEAM backup environment is not needed and thus I shutdown this vm with a graceful shutdown via the ESXI integration. During the night, the backup server is automatically stated. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617
   
 
 #### Office / streaming <a name="officeautomations"/>
