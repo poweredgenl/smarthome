@@ -39,7 +39,7 @@ If you have suggestions - make an item / issue or pull request perhaps i can imp
 
 I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
 
-- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), Raspberry pi's for individual tasks etc. 
+- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
 
@@ -59,10 +59,9 @@ HASS virtual machine
 
 Docker  host for specific tasks
 - [Portainer](https://portainer.io) for management of container stacks
-- [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking - (
+- [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking
 - [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
 - [Portainer](https://portainer.io) for management of container stacks
-- [Monoclecam](https://monoclecam.com/) (translates local cameras on synology into RTSP streams the Echo devices can see/view) - OFFLINE due no need.
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
 
 
@@ -248,7 +247,11 @@ For maximum energy savings i have implemented next to automatic light switching 
   <img src="https://i.imgur.com/pr2LWBI.png" />
   </p>
 
-- Via the ESXI stats integration im controlling the power of multiple virtual machines as well. During the day the VEEAM backup environment is not needed and thus I shutdown this vm with a graceful shutdown via the ESXI integration. During the night, the backup server is automatically stated. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617
+- Via the ESXI stats integration im controlling the power of multiple virtual machines as well. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617. Because I switch off VM's, I can reduce the load on the ESX servers and keep 1 poweredoff/in    standby during fewer usage. This will save energy.
+
+  The following systems are fully automated:
+  - Backup servers: both the VEEAM environment (VM) and the backup store (raspberry pi + external drive) are only started when the backup schedule approaches.
+  - OpenVas/GVM: I regular scan my whole IT environment for CVE/NVT's but this server is only needed at 2 moments, the update of the NVT's during the night and the actual scheduled scans (weekly/monthly)...during those other hours, the systems are off. 
   
 
 #### Office / streaming <a name="officeautomations"/>
