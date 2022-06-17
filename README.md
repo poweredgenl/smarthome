@@ -154,6 +154,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - DSMR reader
 - Elgato Key light
 - ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
+- ESPHome
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - Grocy
