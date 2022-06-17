@@ -338,7 +338,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   <img src="https://i.imgur.com/MpoG4hi.png" width=60% height=60%>
   </p>
   
-  
+- **Garbage helper**: at 19:15 every evening , HA checks which garbage needs to be taken out and sents a push message to notify which garbage needs to be taken out.  
 - **House status**: responds the amount of current power consumption (in watts, the remaining runtimes on the UPS batteries in the serverrack and hallway. Also         reports the current central heating pressure in the system (in bar).
 - **Open Windows**: responds / checks which windows are open and responds which are open and need to be closed
 - **Goodmorning**: responds " good morning " (duh), puts on the lights, but also mentions if the last nights backup has failed and hasnt uploaded.
