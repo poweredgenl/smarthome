@@ -47,8 +47,13 @@ Total number of devices/sensors/automations/items/boleans/node red blocks in my 
 
 HASS virtual machine
 - Home Assistant Supervised
-- Z-zwave via AEOTEC gen5 stick (+/- 50 devices)
-  - Qubino dimmer & relays / Aeotec plugs / Eurotronic radiators / Neo Coolcam sensors & plugs / Heiman smoke detectors
+- Z-zwave via AEOTEC gen5 stick (56 devices)
+  - Qubino dimmers & relays 
+  - ECOdim cord dimmers
+  - Aeotec plugs
+  - Eurotronic radiators 
+  - Neo Coolcam sensors & plugs 
+  - Heiman smoke detectors
 - Philips Hue  (+/- 20 devices)
 - Wifi / MQTT modules
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
@@ -229,6 +234,7 @@ As i use multiple trackers / BLE / video / the HA companion apps - i want to mer
 #### Light automations <a name="lightautomations"/>
 
 - In toilet / storage and attic, office, lights turn on/off based on motion sensor, re-triggered / reset of the timer in case of continued presence.
+- Wake up lights: using ECOdim cord dimmers (which i plugged in to replace regular light switches on floorlamps) built 2 wake up lights for the bedroom     to replace traditional Philips wake up lights which are less fancy. Using the android HA companion app to passthru the alarm clock variable. Used         https://www.wouterbulten.nl/blog/tech/custom-wake-up-light-with-node-red/ as guid which worked excellent!
 - Automated lights with sensors including day/night routines, mood scenes after sunset and vacation lights when the alarm is armed.
 - In the hallway / kitchen / dining and living lights turn on/off based on motion sensor, but included with mood scenes to dim after no presence is detected       anymore. In this way creating a mood-effect, eg dimmed lights to provide a cozy atmosphere. This is also activated when the lights are off, and no motion is     detected at sunset. If all those cases are met - the mood lights are activated automatically.
 
