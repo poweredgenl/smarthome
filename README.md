@@ -196,13 +196,14 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 
 Below are the ones i have implemented in my home. Those not related to security are uploaded as well.
 
-- Home build wake up lights - Philips style - with Hue Bulbs and the HASS "next_alarm" sensor.
+- Home build wake up lights - Philips style - with zwave cord dimmers and the HASS "next_alarm" sensor.
 - Bathroom fan - when humidity is above a certain level.
 - Alarm system with sensors
 - Power monitoring everything / plugs / dimmers etc.
    - DSMR is reading the central p1 power monitor and gathers this in the HASS energy dashboard.
 - The upstairs thermostats are joined in a climate group so i can control them as a whole floor. (eurotronic spirit zwave)
 - Nightly the HASS and frigate/AI-ML setup is backupped and transferred 1 locally to the drive 2 copied to the NAS 3 synced with a cloud storage provider. (using   the 3 2 1 method for backups)
+- Vacuum robot cleaning the house and automations for auto empty the dock/bins.
 
 #### Realtime presence tracking<a name="videotracking"/>
 
