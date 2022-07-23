@@ -188,6 +188,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Telegram notification service
 - Tasmoto
 - Tuya + Tuya local
+- Xiaomi integration (for Roborock S7 vacuumrobot)
 
 ### Automations <a name="automations"/>
 
