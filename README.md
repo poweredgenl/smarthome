@@ -41,13 +41,13 @@ I have a generic virtualized platform which runs multiple servers, all in servic
 
 - Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's. 
 
-Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 28-01-2022) - 1275 items.
+Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 27-07-2022) over 1600 entities.
 
 ### The basics <a name="basics"/>
 
 HASS virtual machine
 - Home Assistant Supervised
-- Z-zwave via AEOTEC gen5 stick (56 devices)
+- Z-zwave via AEOTEC gen5 stick (+/- 60 devices)
   - Qubino dimmers & relays 
   - ECOdim cord dimmers
   - Aeotec plugs
