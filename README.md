@@ -170,6 +170,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Mac Home Assistant companion - to integrate my macbook sensors in HA to do cool automations
 - Google Nest
 - Google Cast
+- Google Travel Time
 - Kodi (on Nvidia Shield TV 2017)
 - Network UPS tools
 - Node-red
@@ -430,6 +431,7 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
 - **BMW fuel remaining**: you can ask Alexa how much fuel (liters) is remaning and the approximate range (km's) which you can drive with this.
 - **BMW horn honk**: yes dont ask, i added a routine (when the car is home), to ask alexa to press the horn. Something fun to do as well :-)
 - **BMW activate airconditioning**: asking Alexa to activate the AC on hot days.
+- **BMW travel time to home**: its usefull when my wife uses the car and shes in a traffic jam, and mostly, because im the homecook, handy to know when she arrives back at the home. Im using a combination of the "device.tracker" , "zone.home" and Google Travel Time integration to calculate the amount of minutes untill she gets home. Handy for making sure pasta/rice/etc is right on time. 
 
 Also i used the Alexa skill " home guide " with which you can built a homeguide skill specific for you home to guide you to specific items, or how to do stuff. F
 
