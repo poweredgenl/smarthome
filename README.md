@@ -68,8 +68,8 @@ Docker  host for specific tasks
 - [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
 - [Portainer](https://portainer.io) for management of container stacks
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
-- [LibreNMS] - Monitoring the whole network - see further this README for an impression.
-- [Smokeping] - in conjunction with LibreNMS monitoring ping times to various entities as well as the WAN feeds for their quality.
+- [LibreNMS](#monitoring) - Monitoring the whole network - see further this README for an impression.
+- Smokeping - in conjunction with LibreNMS monitoring ping times to various entities as well as the WAN feeds for their quality.
 
 
 Synology DS920+
