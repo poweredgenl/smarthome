@@ -66,7 +66,7 @@ Docker  host for specific tasks
 - [Portainer](https://portainer.io) for management of container stacks
 - [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking
 - [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
-- [Portainer](https://portainer.io) for management of container stacks
+- [DSMR Reader]([https://portainer.i](https://github.com/dsmrreader/dsmr-reader)o) for the P1 monitor (with serial over ethernet config).
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
 - [LibreNMS](#monitoring) - Monitoring the whole network - see further this README for an impression.
 - Smokeping - in conjunction with LibreNMS monitoring ping times to various entities as well as the WAN feeds for their quality.
