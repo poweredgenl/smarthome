@@ -190,7 +190,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
 - Tasmoto
-- Tuya + Tuya local
+- Tuya local
 - Xiaomi integration (for Roborock S7 vacuumrobot)
 
 ### Automations <a name="automations"/>
