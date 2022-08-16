@@ -113,7 +113,7 @@ Small overview of the main equipment running the house. Rack consumes approx 250
 
 
 <p align="center">
-  <img src="https://i.imgur.com/SntoVTE.png" />  
+  <img src="https://i.imgur.com/m9u4PTg.png" />  
 </p>
 
 
