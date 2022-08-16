@@ -128,7 +128,7 @@ I added: `/usr/bin/chromium-browser --kiosk --disable-restore-session-state --di
 
 <p align="center">
   <img src="https://i.imgur.com/Nt3B9lf.jpg" />
-  <img src="https://i.imgur.com/b6DuBSm.png" />
+  <img src="https://i.imgur.com/pU9iKJt.png" />
 </p> 
 
 I use also the 3d version of my home, created based on https://aarongodfrey.dev/home%20automation/creating-a-3d-floorplan-in-home-assistant/ as an interactive panel on the homescreen. 
