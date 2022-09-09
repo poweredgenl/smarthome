@@ -164,7 +164,6 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - ESPHome
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
-- Grocy
 - HACS (Home Assistant community store)
 - Siemens Home Connect
 - Sensor.community (Luftdaten)
@@ -177,6 +176,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Network UPS tools
 - Node-red
 - Opentherm Gateway with NodeMCU: https://github.com/rvdbreemen/OTGW-firmware
+- Our Groceries (tracking)
 - Philips Hue + Innr sockets
 - Philips Android TV (Oled 55")
 - RFXcom 433mhz
