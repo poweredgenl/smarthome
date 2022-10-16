@@ -37,9 +37,9 @@ If you have suggestions - make an item / issue or pull request perhaps i can imp
 
 ## Platform overview <a name="overview"/>
 
-I have a generic virtualized platform which runs multiple servers, all in service for the smarthome platform.
+I have a generic virtualization platform which runs 4 regular vms and 2 docker host-vms, container total of +/- 45 containers.
 
-- Firewall ([pfSense](https://www.pfsense.org/)), domain controller (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), docker hosts, steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's. 
+- Functions: Firewall ([pfSense](https://www.pfsense.org/)), domain controllers (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's for smaller tasks. 
 
 Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 27-07-2022) over 1600 entities.
 
@@ -83,7 +83,7 @@ Synology DS920+
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
-- Synology DS920+ (4x 3TiB) + External 640gb disk for 2nd backup.
+- Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
 - 4x Vivotek / 2x Foscam POE cameras.
