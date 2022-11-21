@@ -105,8 +105,12 @@ There are multiple options for running the above components, commonly a Raspberr
 Small overview of the main equipment running the house. Rack consumes approx 175 watt 24/7 (which i think is quite reasonable).
 
 <p align="center">
+  <img src="https://tweakers.net/fotoalbum/image/Wor6g2PCcLclY3C8jcnG6QT3.jpg" />
+  <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" />
   <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
-  <img src="https://i.imgur.com/sqyQQim.jpeg" />
+  
+  
+
 </p>
 
 #### Librenms monitoring <a name="monitoring"/>
