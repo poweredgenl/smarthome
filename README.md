@@ -102,7 +102,7 @@ There are multiple options for running the above components, commonly a Raspberr
 
 #### Server & network equipement <a name="servers"/>
 
-Small overview of the main equipment running the house. Rack consumes approx 250 watt 24/7 (which i think is quite reasonable).
+Small overview of the main equipment running the house. Rack consumes approx 175 watt 24/7 (which i think is quite reasonable).
 
 <p align="center">
   <img src="https://tweakers.net/i/0r6HpkIA0E4dJyqFy1RX9d0q4Ds=/x800/filters:strip_icc():strip_exif()/f/image/AIuuBZATDU5sVqqeE1d0l8iR.jpg?f=fotoalbum_large" />
