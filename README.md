@@ -104,6 +104,9 @@ There are multiple options for running the above components, commonly a Raspberr
 
 Small overview of the main equipment running the house. Rack consumes approx 175 watt 24/7 (which i think is quite reasonable).
 
+[![Watch the overview video](https://img.youtube.com/vi/TL6aasnU-vE/default.jpg)](https://youtu.be/TL6aasnU-vE)
+
+
 <p align="center">
   <img src="https://tweakers.net/fotoalbum/image/Wor6g2PCcLclY3C8jcnG6QT3.jpg" />
   <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" />
