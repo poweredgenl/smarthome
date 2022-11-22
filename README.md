@@ -82,6 +82,10 @@ Synology DS920+
 
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
+<p align="center">
+  <img src="https://tweakers.net/fotoalbum/image/lNT1RN7nUI4BECkO1zlDLc0Y.jpg" width="550" />  
+</p>
+
 - 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
@@ -113,8 +117,6 @@ Watch the video overview (click pictures):
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LbIXTtZXNjQ" target="_blank">
  <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" alt="Watch the video" width="400" border="10" />
 </a>
-   
-
 
 #### Librenms monitoring <a name="monitoring"/>
 
