@@ -106,15 +106,15 @@ Small overview of the main equipment running the house. Rack consumes approx 175
 
 Watch the video overview (click pictures):
 
-<p align="center">
+
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=TL6aasnU-vE" target="_blank">
  <img src="https://tweakers.net/fotoalbum/image/Wor6g2PCcLclY3C8jcnG6QT3.jpg" alt="Watch the video" width="500" border="10" />
 </a>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LbIXTtZXNjQ" target="_blank">
- <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" alt="Watch the video" width="500" border="10" />
+ <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" alt="Watch the video" width="400" border="10" />
 </a>
    
-</p>
+
 
 #### Librenms monitoring <a name="monitoring"/>
 
