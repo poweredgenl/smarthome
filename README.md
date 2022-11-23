@@ -115,9 +115,11 @@ Watch the video overview (click pictures):
  <img src="https://tweakers.net/fotoalbum/image/Wor6g2PCcLclY3C8jcnG6QT3.jpg" alt="Watch the video" width="500" />
 </a>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=LbIXTtZXNjQ" target="_blank">
- <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" alt="Watch the video" width="400"  />
+ <img src="https://tweakers.net/fotoalbum/image/QaWaKh8iRttkLvCcipjZTydY.jpg" alt="Watch the video" width="500"  />
 </a>
 </p>
+
+
 #### Librenms monitoring <a name="monitoring"/>
 
 
