@@ -86,7 +86,7 @@ There are multiple options for running the above components, commonly a Raspberr
   <img src="https://tweakers.net/fotoalbum/image/lNT1RN7nUI4BECkO1zlDLc0Y.jpg" width="550" />  
 </p>
 
-- 2x Dell PowerEdge R320 (Xeon E5-2420, 64GiB Ram)
+- 2x Dell PowerEdge R320 ~~(Xeon E5-2420, 64GiB Ram, 4x 1gb NICs)~~ (Xeon E5-2470v2, 64GiB Ram, 2x 1gb & 2x10gb NICs)
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
