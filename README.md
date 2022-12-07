@@ -474,4 +474,9 @@ See the https://github.com/poweredgenl/smarthome/issues page on github for the e
 - **Circadian lighting**: you can link - if you have the proper hardware the color temperature and brightness of your lights - to the natural daylight. It should   give a more natural feeling when it comes to lighting.
 
 
+Follow me on:
+
+LinkedIN: https://www.linkedin.com/in/peterpaulkurstjens/
+Mastodon: <a rel="me" href="https://mastodon.tuxtendo.nl/@poweredge">Mastodon</a>
+
 
