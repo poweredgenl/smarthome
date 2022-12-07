@@ -476,7 +476,7 @@ See the https://github.com/poweredgenl/smarthome/issues page on github for the e
 
 Follow me on:
 
-LinkedIN: https://www.linkedin.com/in/peterpaulkurstjens/
-Mastodon: <a rel="me" href="https://mastodon.tuxtendo.nl/@poweredge">Mastodon</a>
+- LinkedIN: https://www.linkedin.com/in/peterpaulkurstjens/
+- Mastodon: <a rel="me" href="https://mastodon.tuxtendo.nl/@poweredge">clikck!</a>
 
 
