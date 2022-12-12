@@ -11,7 +11,7 @@ fi
 TARGET="$1"
 
 if [ -z ${2+x} ]; then
-  echo "Parameter #2 missing: control action"
+  echo "Parameter #2 missing: control action. Choose START or STOP"
   exit
 fi
 TARGET_ACTION="$2"
