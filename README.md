@@ -63,7 +63,7 @@ HASS virtual machine
 - NFC tags for various stuff
 
 Docker  host for specific tasks
-- [Portainer](https://portainer.io) for management of container stacks
+- [Portainer](https://portainer.io) for management of container stacks, with - see file, a bash script for stopping stacks.
 - [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking
 - [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
 - [DSMR Reader]([https://portainer.i](https://github.com/dsmrreader/dsmr-reader)o) for the P1 monitor (with serial over ethernet config).
