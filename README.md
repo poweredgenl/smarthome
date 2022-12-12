@@ -269,6 +269,8 @@ For maximum energy savings i have implemented next to automatic light switching 
 <p align="center">
   <img src="https://i.imgur.com/pr2LWBI.png" />
   </p>
+  
+- Using the same setup with SNMP commands - also switching off the backuprouter (4G LTE) during the night via POE, i dont need those, so only online when needed.
 
 - Via the ESXI stats integration im controlling the power of multiple virtual machines as well. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617. Because I switch off VM's, I can reduce the load on the ESX servers and keep 1 poweredoff/in    standby during fewer usage. This will save energy.
 
