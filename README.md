@@ -170,6 +170,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Buienradar (weather forecast the Netherlands)
 - CO2 Signal
 - DSMR reader
+- Dell IDRAC integration
 - Elgato Key light
 - ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
 - ESPHome
