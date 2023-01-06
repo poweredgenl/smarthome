@@ -1,4 +1,4 @@
-# H17 Smarthome project
+# H17 Smarthome / Homelab project
 
 ## Intro
 
