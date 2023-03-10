@@ -325,7 +325,7 @@ msg.nikhef1routes_sensor = msg.payload.slice(0, -1);
 return msg
 ```
 
-See the youtube for a demo: <a href="https://www.youtube.com/shorts/vD8oDn_aoOE" target="_blank">
+See the youtube https://www.youtube.com/shorts/vD8oDn_aoOE for a DEMO
 
 #### Other automations <a name="otherautomations"/>
 
