@@ -28,6 +28,7 @@ If you have suggestions - make an item / issue or pull request perhaps i can imp
     - [Lights](#lightautomations)
     - [Green IT / Energy efficiency](#green)
     - [Office & streaming](#officeautomations)
+    - [BGP / Network fun](#bgp)
     - [Other automations](#otherautomations)
     - [Specific implementations](#specific)
   - [House status](#housestatus)
@@ -288,6 +289,42 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 - **Presenter mode**: When i activate via my streamdeck the 'presenter mode' it:
   - Dims the light, turns on the elgato key lights, changes the colouring on the hue bulbs, closes the window blinds and overrides the sensor/motion flows which     normally turn off lights.
 - **Piano mode**: when i activate the piano mode via streamdeck, hass, or voice: the piano (yamaha cp4 with power socket) will turn on, a WoL packet to the 2nd         laptop is sent, and a script is executed on the laptop to start my DAW software.
+
+#### BGP network fun <a name="bgp"/>
+
+Im lucky to have both an ASN and a PI space, and i thought it would be cool to link my DFZ router to Home Assistant. The use cases i had/have in mind are:
+
+- Alexa can mention number of: peers, transits, and full route table.
+- HA can trigger routing actions in the bgp software, Bird 1.6.
+
+For more info on my network setup, AS200132, check out https://github.com/poweredgenl/networkstuff/
+
+The automation i now have built are based on ssh/pubkey login where a node red script triggers an SSH command. Specifically i used the following ones:
+
+Routes:
+```
+sudo ip r | wc -l
+```
+Peers
+```
+sudo birdc s p | grep Established | grep peer |  wc -l
+```
+Transits
+```
+sudo birdc s p | grep Established | grep transit |  wc -l
+```
+
+The node-red flow then looks as follow:
+
+<img src="https://i.imgur.com/PfjaNYW.png" width=60% height=60%>
+
+As the SSH commands return an enter value as well in the payload, i trimmed the output so that the data can be used in an another msg.payload, and can also be injected into a sensor directly accessible by HA to show on the dashboards.
+
+```
+msg.nikhef1routes_sensor = msg.payload.slice(0, -1);
+return msg
+```
+
 
 #### Other automations <a name="otherautomations"/>
 
