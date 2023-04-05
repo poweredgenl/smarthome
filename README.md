@@ -1,4 +1,4 @@
-# H17 Smarthome / Homelab project
+# Digital-Twin H17 Smarthome /  project
 
 ## Intro
 
