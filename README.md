@@ -55,7 +55,8 @@ HASS virtual machine
   - Eurotronic radiators 
   - Neo Coolcam motion sensors
   - Heiman smoke detectors
-- Philips Hue  (+/- 20 devices)
+- Philips Hue  (+/- 20 devices) / zigbee
+- Sonoff Zigbee 3.0 Plus stick / zigbee2mqtt
 - Wifi / MQTT modules
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
