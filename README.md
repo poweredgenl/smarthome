@@ -61,7 +61,7 @@ HASS virtual machine
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
 - Node-RED for automation flows
-- RFX 433Mhz transmitter (1xdoorbell / 1x Somfy RTS blinds upstairs)
+- RFX 433Mhz transmitter (1x doorbell / 1x Somfy RTS blinds upstairs)
 - NFC tags for various stuff
 
 Docker  host for specific tasks
