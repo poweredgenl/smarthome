@@ -48,15 +48,17 @@ Total number of devices/sensors/automations/items/boleans/node red blocks in my 
 
 HASS virtual machine
 - Home Assistant Supervised
-- Z-zwave via AEOTEC gen5 stick (+/- 60 devices)
+- Z-zwave2mqtt + AEOTEC gen5 stick (+/- 60 devices)
   - Qubino in wall dimmers & relays 
   - ECOdim cord dimmers for regular lamps
   - Aeotec / Neo coolcam plugs (aeotec for measuring appliances, neo for dumb switching)
   - Eurotronic radiators 
   - Neo Coolcam motion sensors
   - Heiman smoke detectors
-- Philips Hue  (+/- 20 devices) / zigbee
-- Sonoff Zigbee 3.0 Plus stick / zigbee2mqtt
+- Zigbee2mqtt + Sonoff Zigbee Plus 3.0 zdongle-e
+  - Philips hue lights / various white/ambiance/color/e14/e27/gu10 (+/- 25 devices)
+  - Philips motions sensors 
+  - Zemismart Zigbeee curtain blinds 
 - Wifi / MQTT modules
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
