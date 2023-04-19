@@ -172,6 +172,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - BMW Connected drive
 - Broadink
 - Buienradar (weather forecast the Netherlands)
+- Browser mod
 - CO2 Signal
 - DSMR reader
 - Dell IDRAC integration
