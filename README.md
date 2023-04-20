@@ -311,11 +311,11 @@ sudo ip r | wc -l
 ```
 Peers
 ```
-sudo birdc s p | grep Established | grep peer |  wc -l
+sudo birdcl s p | grep Established | grep peer |  wc -l
 ```
 Transits
 ```
-sudo birdc s p | grep Established | grep transit |  wc -l
+sudo birdcl s p | grep Established | grep transit |  wc -l
 ```
 
 The node-red flow then looks as follow:
@@ -431,7 +431,38 @@ Based on booleans i made some automations with respond via Alexa TTS on my reque
   </p> 
 
 - **Travel time**: by integrating google maps, i can also ask the house how many minutes i need to get to the office, both for myseld and the missus.
-- **Door trigger**: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS
+- **Door trigger**: when the doorbell is pressed it makes a picture and sents it to telegram and mentions there is somebody at the door via Alexa TTS. Also - incombination with browser_mod and a script on the raspberry pi it:
+
+  - 1 Initiates a popup on the homescreen (monitor) with the door-camera. 
+  ```
+  alias: Camera popup frontdoor
+  description: ""
+  trigger: []
+  condition: []
+  action:
+  - service: browser_mod.popup
+    data:
+      dismissable: true
+      autoclose: false
+      title: Test
+      size: wide
+      timeout: 25000
+      deviceID:
+        - homescreen
+      content:
+        camera_view: live
+        type: picture-glance
+        entities: []
+        camera_image: camera.nelnlfs001_cam01_door
+  mode: single
+  
+  ```
+  
+  - 2 As the monitor is normally in sleep - it uses DPMS to force/trigger a wake-up from sleep. I use a SSH function in node-red for this with the    following command to be executed on the raspberry pi running the homescreen.
+  ```
+  export DISPLAY=:0 && /usr/bin/xset dpms force on
+  ```
+
 - **Door welcome message**: when im returning from work or left for a longer time from the house, based on frigate and some other factors it determines if im in   the hallway (sequence / cam detection / door opening / no wifi on phone) to send me via Alexa TTS a ' welcome back ' message to the hallway Amazon speaker.
 - **Alarm system**: when the alarm is armed, the system will report any movement based on frigate/motion sensors/door sensors/sound and some other thingie, to     telegram / sms and creates photos in the process. This flow i wont share ...
 - **Washing machine + dryer + dishwasher**: the Node-red flows monitor the energy usage and when the value stays below a certain amount of time, the system will   notice the washing machine / dryer & dishwasher is not in cycle mode anymore, and will report this accordingly.
