@@ -58,7 +58,7 @@ HASS virtual machine
 - Zigbee2mqtt + Sonoff Zigbee Plus 3.0 zdongle-e
   - Philips hue lights / various white/ambiance/color/e14/e27/gu10 (+/- 25 devices)
   - Philips motions sensors 
-  - Zemismart Zigbeee curtain blinds 
+  - Zemismart Zigbeee curtain blinds x3
 - Wifi / MQTT modules
   - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
   - NodeMCU (2x)
@@ -94,7 +94,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
-- 4x Vivotek / 2x Foscam POE cameras.
+- 4x Vivotek POE cameras / 2x Foscam cameras for the kids / 2x Hikvision 4MP cameras for outdoor
 - 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
 - 3x Raspberry PI 4b + POE HAT for:
@@ -105,6 +105,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - 1x Raspberry PI Zero W with USB/Ehternet hub.
   - P1 cable / DSMR reader
 - Redundant WAN - fiber 1000/1000mbit - 4G backup via Mikrotik router + Huawei stick.
+- Secured tunnels toward my DFZ router - AS200132 - 195.95.177.0/24
 - 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
 - 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
 
