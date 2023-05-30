@@ -108,6 +108,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - Secured tunnels toward my DFZ router - AS200132 - 195.95.177.0/24
 - 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
 - 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
+- 18x Hyundai Solar - 430wp - Enphase IQ8M - Envoy Metered - 3 phase connected
 
 #### Server & network equipement <a name="servers"/>
 
@@ -180,6 +181,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Elgato Key light
 - ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
 - ESPHome
+- Enphase Envoy - HACS integration
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - HACS (Home Assistant community store)
