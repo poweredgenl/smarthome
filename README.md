@@ -281,6 +281,8 @@ For maximum energy savings i have implemented next to automatic light switching 
   
 - Using the same setup with SNMP commands - also switching off the backuprouter (4G LTE) during the night via POE, i dont need those, so only online when needed.
 
+- For saving power during the night as well im stopping unessacary docker-compose/podman/portainer stacks. I use the script attached in this repo: https://github.com/poweredgenl/smarthome/tree/main/portainer_control to control specific stacks which consume a lot of CPU and memory, and thus, energy.
+
 - Via the ESXI stats integration im controlling the power of multiple virtual machines as well. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617. Because I switch off VM's, I can reduce the load on the ESX servers and keep 1 poweredoff/in    standby during fewer usage. This will save energy.
 
   The following systems are fully automated:
