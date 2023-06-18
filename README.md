@@ -211,6 +211,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Synology
 - Transmission BT (on Synology)
 - pfSense UPNP
+- Rainbird
 - Unifi Network Application/controller
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
 - Telegram notification service
