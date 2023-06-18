@@ -95,7 +95,11 @@ There are multiple options for running the above components, commonly a Raspberr
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
-- 4x Vivotek POE cameras / 2x Foscam cameras for the kids / 2x Hikvision 4MP cameras for outdoor
+- 1x Unifi 6 Professional
+- 1x Unifi FLex (5 ports, POE in/POE passthru)
+- 4x Vivotek POE cameras
+- 2x Foscam cameras for the kids
+- 2x Hikvision 4MP cameras for outdoor
 - 1x Google Coral TPU (on Synology)
 - 2x APC Backup UPS 
 - 3x Raspberry PI 4b + POE HAT for:
