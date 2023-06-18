@@ -60,7 +60,8 @@ HASS virtual machine
   - Philips motions sensors 
   - Zemismart Zigbeee curtain blinds x3
 - Wifi / MQTT modules
-  - Shelly 2.5 (3x, for sunshades on the front + garden, and blinds at the kitchen)
+  - Shelly 2.5 (4x, for sunshades on the front + garden, blinds at the kitchen, and one for the garden shed)
+  - Shelly Dimmer (2x for the Garden shed spots and the rear alley spots)
   - NodeMCU (2x)
 - Node-RED for automation flows
 - RFX 433Mhz transmitter (1x doorbell / 1x Somfy RTS blinds upstairs)
