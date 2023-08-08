@@ -101,7 +101,9 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Foscam cameras for the kids
 - 2x Hikvision 4MP cameras for outdoor
 - 1x Google Coral TPU (on Synology)
-- 2x APC Backup UPS 
+- 2x APC UPS
+  - ~~Back-UPS 1400Va~~ Smart-UPS SRT 2200 for serverrack
+  - Back-UPS 700Va for electricity closet
 - 3x Raspberry PI 4b + POE HAT for:
   - Homescreen
   - Storage monitoring station
