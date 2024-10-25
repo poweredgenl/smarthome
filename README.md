@@ -94,7 +94,8 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Dell  Poweredge R640 (Dual Xeon Gold 6152, 576GiB Ram)
 - ~~2x Dell PowerEdge R320 (Xeon E5-2470v2, 96GiB Ram)~~ 
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
-- HPE/Aruba series switches (2530-24G-POE+, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
+- Core switch: Juniper Ex4300-48MP (24x1G, 24x10G, POE++)
+- Edge switches: HPE/Aruba series switches (~~2530-24G-POE+~~, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
 - 1x Unifi 6 Professional
 - 1x Unifi FLex (5 ports, POE in/POE passthru)
