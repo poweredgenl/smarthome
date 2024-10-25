@@ -88,7 +88,7 @@ Synology DS920+
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
 <p align="center">
-  <img src="https://tweakers.net/fotoalbum/image/lNT1RN7nUI4BECkO1zlDLc0Y.jpg" width="550" />  
+  <img src="https://i.imgur.com/3Bg6Wes.jpeg" width="550" />  
 </p>
 
 - 2x Dell  Poweredge R640 (Dual Xeon Gold 6152, 576GiB Ram)
