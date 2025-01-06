@@ -117,7 +117,11 @@ There are multiple options for running the above components, commonly a Raspberr
 - Secured tunnels toward my DFZ router - AS200132 - 195.95.177.0/24
 - 4x ESP32 dev boards for room tracking. See [videotracking](#videotracking).
 - 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
+
+Other Stuff
 - 18x Hyundai Solar - 430wp - Enphase IQ8M - Envoy Metered - 3 phase connected
+- Alfen Single Pro Line S - 32A - Loadbalancing - no backoffice
+- EVCC balancer due to no proper DSMR protocol at the smartmeter of the house
 
 #### Server & network equipement <a name="servers"/>
 
@@ -209,7 +213,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Philips Hue + Innr sockets
 - Philips Android TV (Oled 55")
 - RFXcom 433mhz
-- Resmed MyAir - medical sleep apnea device (EDIT: not working due to 2fa - trying to solve the issue)
+- Resmed MyAir - medical sleep apnea device 
 - Shelly
 - Spotify
 - Synology
