@@ -183,6 +183,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 
 ### HA Integrations enabled <a name="integrations"/>
 
+- Alfen Wallbox
 - Amazon Alexa
 - Android TV Notifications
 - Auto backup 
@@ -193,10 +194,12 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - CO2 Signal
 - DSMR reader
 - Dell IDRAC integration
-- Elgato Key light
+- Elgato Key lights
 - ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
 - ESPHome
 - Enphase Envoy - HACS integration
+- EVCC addon / HASSIO
+- EVCC integration (interface)
 - Frigate NVR (on Synology) - guides: https://github.com/blakeblackshear/frigate 
 - Google Maps travel
 - HACS (Home Assistant community store)
@@ -213,7 +216,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Opentherm Gateway with NodeMCU: https://github.com/rvdbreemen/OTGW-firmware
 - Our Groceries (tracking)
 - Philips Hue + Innr sockets
-- Philips Android TV (Oled 55")
+- Philips Android TV 
 - RFXcom 433mhz
 - Resmed MyAir - medical sleep apnea device 
 - Shelly
@@ -224,6 +227,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - Rainbird
 - Unifi Network Application/controller
 - Z-Wave JS with Z-wave JS to MQTT (for control panel)
+- Zigbee2MQTT
 - Telegram notification service
 - Tasmoto
 - Tuya local
