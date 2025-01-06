@@ -95,7 +95,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - ~~2x Dell PowerEdge R320 (Xeon E5-2470v2, 96GiB Ram)~~ 
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - Core switch: Juniper Ex4300-48MP (24x1G, 24x10G, POE++)
-- Edge switches: HPE/Aruba series switches (~~2530-24G-POE+~~, 2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
+- Edge switches: HPE/Aruba series switches (2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
 - 3x UniFi 6 Lite
 - 1x Unifi 6 Professional
 - 1x Unifi FLex (5 ports, POE in/POE passthru)
@@ -103,9 +103,10 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x Foscam cameras 
 - 2x Hikvision 4MP cameras for outdoor
 - 1x Google Coral TPU (on Synology)
-- 2x APC UPS
-  - ~~Back-UPS 1400Va~~ Smart-UPS SRT 2200 for serverrack
+- 3x UPS
+  - Smart-UPS SRT 2200 + 2x SRT72RMBP (runtime severrack approx 3 hours)
   - Back-UPS 700Va for electricity closet
+  - Back-UPS 1400Va for my office
 - 3x Raspberry PI 4b + POE HAT for:
   - Homescreen
   - Storage monitoring station
@@ -119,8 +120,9 @@ There are multiple options for running the above components, commonly a Raspberr
 - 2x NodeMCU v2 with SDS011 particle sensor (sensor.community)
 
 Other Stuff
-- 18x Hyundai Solar - 430wp - Enphase IQ8M - Envoy Metered - 3 phase connected
-- Alfen Single Pro Line S - 32A - Loadbalancing - no backoffice
+- 18x Hyundai Solar panels - 430wp - Enphase IQ8M inverters - Envoy IQ Metered S - 3 phase installation
+- Alfen Single Pro Line S charger - 32A - Loadbalancing - no backoffice
+- BMW 330E Touring - https://www.instagram.com/g21technoviolett/
 - EVCC balancer due to no proper DSMR protocol at the smartmeter of the house
 
 #### Server & network equipement <a name="servers"/>
