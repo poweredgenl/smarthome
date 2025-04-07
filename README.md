@@ -308,8 +308,28 @@ For maximum energy savings i have implemented next to automatic light switching 
   Enphase -> Home Assistant -> expose P1/2/3 sensor information -> use http / get / json / rest with an Home Assistant API token -> EVCC polls home assistant for proper phase information -> EVCC exports data via modbus towards the Alfen charger. VOILA! 
 
 <p align="center">
-  <img src=https://imgur.com/a/7KrE3br" />
+  <img src=https://i.imgur.com/92elSRY.png" />
   </p>
+
+  I also modified the phase3 information synthetically. As the fuse box is split, the p3 load is shared between the car and the washing machine. Due to the fact the washing machine is on the same phases in the storage room, i instruct home assistant to artifically add some Amps to the phase to it wont overload the system.
+
+I use the follwing code in configuration.yaml for this:
+
+```
+template:
+  - sensor:
+      - name: "enphase dryer L3 current sum"
+        unit_of_measurement: "A"  # Replace with the appropriate unit, e.g., "kWh" or "°C"
+        state: >
+            {% set enphasep3 = states('sensor.envoy_122236065299_consumption_current_l3') | float(0) %}
+            {% set dryercur = states('sensor.dryer_electric_consumption_a') | float(0) %}
+            {% set dryer_cycle = is_state('input_boolean.dryer_cycle', 'on') %}
+            {% if dryercur == 'unavailable' or (dryercur | float(0) > 0.5) or dryer_cycle %}
+             {{ enphasep3 + 9 }}
+            {% else %}
+              {{ enphasep3 }}
+            {% endif %}
+ ``` 
 
 - For saving power during the night as well im stopping unessacary docker-compose/podman/portainer stacks. I use the script attached in this repo: https://github.com/poweredgenl/smarthome/tree/main/portainer_control to control specific stacks which consume a lot of CPU and memory, and thus, energy.
 
