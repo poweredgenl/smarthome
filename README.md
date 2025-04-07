@@ -321,7 +321,7 @@ template:
       - name: "enphase dryer L3 current sum"
         unit_of_measurement: "A"  # Replace with the appropriate unit, e.g., "kWh" or "°C"
         state: >
-            {% set enphasep3 = states('sensor.envoy_122236065299_consumption_current_l3') | float(0) %}
+            {% set enphasep3 = states('sensor.envoy_consumption_current_l3') | float(0) %}
             {% set dryercur = states('sensor.dryer_electric_consumption_a') | float(0) %}
             {% set dryer_cycle = is_state('input_boolean.dryer_cycle', 'on') %}
             {% if dryercur == 'unavailable' or (dryercur | float(0) > 0.5) or dryer_cycle %}
