@@ -289,7 +289,7 @@ As i use multiple trackers / BLE / video / the HA companion apps - i want to mer
   <img src="https://i.imgur.com/mliOoes.png" />
   </p>
   
-#### Green IT / Sustanability <a name="green"/>
+#### Energy / Green IT / Sustanability <a name="green"/>
  
 For maximum energy savings i have implemented next to automatic light switching the following options. More options tb implemented, see for this the backlog on the issues page.
 
@@ -300,6 +300,16 @@ For maximum energy savings i have implemented next to automatic light switching 
   </p>
   
 - Using the same setup with SNMP commands - also switching off the backuprouter (4G LTE) during the night via POE, i dont need those, so only online when needed.
+
+- Phase information / energy loadbalancing workaround.
+  In my house i got only an older DSMR reader which doesnt supply phase information. My car charger / Alfen Single Proline S needs this info to do proper load balancing with 3 phases.
+  The solution i have chosen to still get phase information to the car charger is the following:
+
+  Enphase -> Home Assistant -> expose P1/2/3 sensor information -> use http / get / json / rest with an Home Assistant API token -> EVCC polls home assistant for proper phase information -> EVCC exports data via modbus towards the Alfen charger. VOILA! 
+
+<p align="center">
+  <img src=https://imgur.com/a/7KrE3br" />
+  </p>
 
 - For saving power during the night as well im stopping unessacary docker-compose/podman/portainer stacks. I use the script attached in this repo: https://github.com/poweredgenl/smarthome/tree/main/portainer_control to control specific stacks which consume a lot of CPU and memory, and thus, energy.
 
