@@ -60,27 +60,30 @@ HASS virtual machine
   - Philips motions sensors 
   - Zemismart Zigbeee curtain blinds x3
 - Wifi / MQTT modules
-  - Shelly 2.5 (4x, for sunshades on the front + garden, blinds at the kitchen, and one for the garden shed)
-  - Shelly Dimmer (2x for the Garden shed spots and the rear alley spots)
-  - NodeMCU (2x)
+  - Shelly 2.5
+  - Shelly Dimmers
+  - NodeMCU for various stuff
 - Node-RED for automation flows
 - RFX 433Mhz transmitter (1x doorbell / 1x Somfy RTS blinds upstairs)
 - NFC tags for various stuff
 
-Docker  host for specific tasks
+Podman host for specific tasks
 - [Portainer](https://portainer.io) for management of container stacks, with - see file, a bash script for stopping stacks.
 - [Compreface](https://github.com/exadel-inc/CompreFace) - Video image processing with ML for realtime person tracking
 - [Unifi Network application](https://hub.docker.com/r/linuxserver/unifi-controller)  Managing the AP's and device trackers.
 - [DSMR Reader]([https://portainer.i](https://github.com/dsmrreader/dsmr-reader)o) for the P1 monitor (with serial over ethernet config).
 - [Double Take]( https://github.com/jakowenko/double-take) - intermediate software which bridges between Frigate and Compreface
-- [LibreNMS](#monitoring) - Monitoring the whole network - see further this README for an impression.
 - Smokeping - in conjunction with LibreNMS monitoring ping times to various entities as well as the WAN feeds for their quality.
+- Semaphore UI + Gitlab for everything ansible!
+- and many many others
 
+Proxmox cluster on Dell R640's with an additional R640 for TrueNAS.
+- VMS and other performant requiring stuff.
 
 Synology DS920+
-- Basic storage for media, virtual machines etc
+- Basic storage for movies, series, backups
 - Hub for cameras
-- [Frigate NVR](https://github.com/blakeblackshear/frigate) - (due to not having h264 GPU offloading on ESXi)
+- [Frigate NVR](https://github.com/blakeblackshear/frigate) - (due to not having h264 GPU offloading on PVE)
 
 
 ### Hardware <a name="hardware"/>
@@ -198,7 +201,7 @@ For this i used the conditional element of https://www.home-assistant.io/lovelac
 - DSMR reader
 - Dell IDRAC integration
 - Elgato Key lights
-- ESXI stats / VMware vCenter integration - see [Green IT / Energy efficiency](#green) 
+- Proxmox Integration - see [Green IT / Energy efficiency](#green) 
 - ESPHome
 - Enphase Envoy - HACS integration
 - EVCC addon / HASSIO
@@ -302,8 +305,6 @@ For maximum energy savings i have implemented next to automatic light switching 
   <img src="https://i.imgur.com/pr2LWBI.png" />
   </p>
   
-- Using the same setup with SNMP commands - also switching off the backuprouter (4G LTE) during the night via POE, i dont need those, so only online when needed.
-
 - Phase information / energy loadbalancing workaround.
   In my house i got only an older DSMR reader which doesnt supply phase information. My car charger / Alfen Single Proline S needs this info to do proper load balancing with 3 phases.
   The solution i have chosen to still get phase information to the car charger is the following:
@@ -336,10 +337,10 @@ template:
 
 - For saving power during the night as well im stopping unessacary docker-compose/podman/portainer stacks. I use the script attached in this repo: https://github.com/poweredgenl/smarthome/tree/main/portainer_control to control specific stacks which consume a lot of CPU and memory, and thus, energy.
 
-- Via the ESXI stats integration im controlling the power of multiple virtual machines as well. See https://community.home-assistant.io/t/custom-component-esxi-stats/131617. Because I switch off VM's, I can reduce the load on the ESX servers and keep 1 poweredoff/in    standby during fewer usage. This will save energy.
+- Via the Proxmoxs integration im controlling the power of multiple virtual machines as well. Because I switch off VM's, I can reduce the load on the PVE servers and keep 1 powered-off/in standby during fewer usage. This will save energy.
 
   The following systems are fully automated:
-  - Backup servers: both the VEEAM environment (VM) and the backup store (raspberry pi + external drive) are only started when the backup schedule approaches.
+  - Backup servers: both the Proxmox backup environment (VM) and the backup store (raspberry pi + external drive) are only started when the backup schedule approaches.
   - OpenVas/GVM: I regular scan my whole IT environment for CVE/NVT's but this server is only needed at 2 moments, the update of the NVT's during the night and the actual scheduled scans (weekly/monthly)...during those other hours, the systems are off. 
   
 
@@ -357,7 +358,7 @@ I regularly record videos for LinkedIn and using this setup also in my video cal
 Im lucky to have both an ASN and a PI space, and i thought it would be cool to link my DFZ router to Home Assistant. The use cases i had/have in mind are:
 
 - Alexa can mention number of: peers, transits, and full route table.
-- HA can trigger routing actions in the bgp software, Bird 1.6.
+- HA can trigger routing actions in the bgp software, Bird 2.16.
 
 For more info on my network setup, AS200132, check out https://github.com/poweredgenl/networkstuff/
 
