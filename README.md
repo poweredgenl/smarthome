@@ -91,8 +91,11 @@ There are multiple options for running the above components, commonly a Raspberr
   <img src="https://i.imgur.com/3Bg6Wes.jpeg" width="550" />  
 </p>
 
-- 2x Dell  Poweredge R640 (Dual Xeon Gold 6152, 576GiB Ram)
-- ~~2x Dell PowerEdge R320 (Xeon E5-2470v2, 96GiB Ram)~~ 
+- 2x Dell  Poweredge R640 (Xeon Gold 6152, 384GiB Ram) - Proxmox
+  - Note: original had Dual socket and 576GiB -> saved some power consumption going to 1 socket / 384g ram)
+- 1x Dell PowerEdge R640 (Xeon Silver 4114, 192GiB Ram) - TrueNAS
+  - 8x2TiB Samsung Pro - HBA330 IT - 2x10G/iscsi, 2x1G mgmt
+- 1x Dell PowerEdge R320 (Xeon E5-2450L 72GiB Ram) - Openshift Single Node
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - Core switch: Juniper Ex4300-48MP (24x1G, 24x10G, POE++)
 - Edge switches: HPE/Aruba series switches (2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
@@ -102,7 +105,7 @@ There are multiple options for running the above components, commonly a Raspberr
 - 4x Vivotek POE cameras
 - 2x Foscam cameras 
 - 2x Hikvision 4MP cameras for outdoor
-- 1x Google Coral TPU (on Synology)
+- 1x Thin client / HP T620 / testing stuff
 - 3x UPS
   - Smart-UPS SRT 2200 + 2x SRT72RMBP (runtime severrack approx 3 hours)
   - Back-UPS 700Va for electricity closet
@@ -127,9 +130,9 @@ Other Stuff
 
 #### Server & network equipement <a name="servers"/>
 
-Small overview of the main equipment running the house. Rack consumes approx 175 watt 24/7 (which i think is quite reasonable).
+Small overview of the main equipment running the house. Rack + other devices consumes approx 450 watt 24/7 (which i think is quite reasonable).
 
-Watch the video overview (click pictures):
+Watch the (old) video overview (click pictures):
 
 <p align="center">
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=TL6aasnU-vE" target="_blank">
