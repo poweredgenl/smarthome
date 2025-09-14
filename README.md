@@ -38,11 +38,11 @@ If you have suggestions - make an item / issue or pull request perhaps i can imp
 
 ## Platform overview <a name="overview"/>
 
-I have a generic virtualization platform which runs 4 regular vms and 2 docker host-vms, container total of +/- 45 containers.
+I have a Proxmox virtualization platform which runs 7 regular vms and 2 podman host-vms, container total of +/- 45 containers.
 
-- Functions: Firewall ([pfSense](https://www.pfsense.org/)), domain controllers (users/auth/windows based systems), monitoring ([LibreNMS](https://www.librenms.org/)), steppingstone, backup server ([Veeam Community Edition](https://www.veeam.com/virtual-machine-backup-solution-free.html)), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's for smaller tasks. 
+- Functions: Firewall ([pfSense](https://www.pfsense.org/)), domain (Red Hat IDM/FreeIPA) controllers (users/auth/dns), monitoring ([LibreNMS](https://www.librenms.org/)), steppingstone, backup server (Proxmox Backup Server))), a Greenbone/OpenVAS server for regular scanning and Raspberry pi's for smaller tasks. 
 
-Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 27-07-2022) over 1600 entities.
+Total number of devices/sensors/automations/items/boleans/node red blocks in my smart home (dd - 14-09-2025) almost 3500 entities.
 
 ### The basics <a name="basics"/>
 
@@ -88,7 +88,7 @@ Synology DS920+
 There are multiple options for running the above components, commonly a Raspberry PI or equivalent platform is used but im running already a virtualized platform with other components.
 
 <p align="center">
-  <img src="https://i.imgur.com/3Bg6Wes.jpeg" width="550" />  
+  <img src="https://i.imgur.com/oNPZfud.jpeg" width="750" />  
 </p>
 
 - 2x Dell  Poweredge R640 (Xeon Gold 6152, 384GiB Ram) - Proxmox
