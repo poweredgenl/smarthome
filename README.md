@@ -94,10 +94,11 @@ There are multiple options for running the above components, commonly a Raspberr
   <img src="https://i.imgur.com/oNPZfud.jpeg" width="750" />  
 </p>
 
-- 2x Dell  Poweredge R640 (Xeon Gold 6152, 384GiB Ram) - Proxmox
+- 2x Dell  Poweredge R640 (Xeon Gold 6152, 384GiB Ram) - Proxmox cluster
   - Note: original had Dual socket and 576GiB -> saved some power consumption going to 1 socket / 384g ram)
+- 1x Dell Poweredge R640 (Xeon Silver 4114, 192GiB Ram) - Proxmox test
 - 1x Dell PowerEdge R740xd (Xeon Silver 4110, 192GiB Ram) - TrueNAS
-  - 10x2TiB Samsung Pro - HBA330 IT - 2x10G/iscsi, 2x1G mgmt
+  - 14x2TiB Samsung Pro - HBA330 IT - 2x10G/iscsi, 2x1G mgmt
 - Synology DS920+ (4x 3TiB) + 2x 1TB WD Red NVME r/w cache.
 - Core switch: Juniper Ex4300-48MP (24x1G, 24x10G, POE++)
 - Edge switches: HPE/Aruba series switches (2530-8G-POE+, 1820-8g-POE+, 1810-8g-POE)
